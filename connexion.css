@@ -3,14 +3,14 @@ html{
 }
 
 body {
-    background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(#97bce6, #afcae8);
     background-attachment: fixed;
 }
 
 #container {
-    width:400px;
+    width:450px;
     margin:0 auto;
-    margin-top:10%;
+    margin-top:15%;
     background-color: rgb(247, 247, 247);
     padding : 30px;
     box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.452);
@@ -40,16 +40,28 @@ input[type=email], input[type=password] {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+input[value='LOGIN'] {
     background-color: #7846a1;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 4px 0;
     border: 1px solid transparent;
     cursor: pointer;
     width: 100%;
     margin-top: 30px;
 }
+
+input[value='INSCRIPTION'] {
+    background-color: #7846a1;
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
 
 input[type=submit]:hover {
     background-color: white;
