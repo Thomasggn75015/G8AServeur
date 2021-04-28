@@ -7,7 +7,7 @@
     </head>
     <body>
         <header>
-            <h1 class = "entete">En tête à remplacer par celui de Thomas</h1>
+        <?php include("menu_nav.php");?>
         </header>
 
         <h1 class = 'titre'><B>Infinite Mesure</B></h1>
