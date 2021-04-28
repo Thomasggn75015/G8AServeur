@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Notre première instruction : echo</title>
+        <title>Infinite Mesure</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_enregistrement_sportif.css" />
     </head>
@@ -85,30 +85,30 @@
             //Données en INPUT renseignées par le nouvel adhérents et correspondants aux critères de la table des adhérents.
         ?>
             <div class = "formulaire">
-                <p class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</B>(coach)</p>
+                <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</B>(coach)</h1>
                 <form class = 'form' ACTION = "page_enregistrement_coach.php" METHOD = "POST">
                     <label for = 'prenom'>Votre prénom</label></br>
                     <INPUT class = "input" TYPE = 'TEXT', id = 'prenom', name = 'prenom' placeholder = 'Prénom' required minlength="2" maxlength="50" size="50"></br>                                            <!--PRENOM-->
-
+                    <p class = 'interligneValider'></p>
                     <label for = 'nom'>Votre nom</label></br>
                     <INPUT class = "input" TYPE = 'TEXT', id = 'nom', name = 'nom' placeholder = 'NOM' required minlength="2" maxlength="50" size="50"></br>                                                     <!--NOM-->
-
+                    <p class = 'interligneValider'></p>
                     <label for = 'pseudo'>Votre pseudo</label></br>
                     <INPUT class = "input" TYPE = 'TEXT', id = 'pseudo', name = 'pseudo' placeholder = "pseudo" required minlength="2" maxlength="50" size="50"></br>                                            <!--PSEUDO-->
-
+                    <p class = 'interligneValider'></p>
                     <label for = 'email'>E-mail</label></br>
                     <INPUT class = "input" TYPE = 'EMAIL', id = 'email', name = 'email' placeholder = "e-mail" required minlength="2" maxlength="50" size="50"></br>                                             <!--E-MAIL-->
-
+                    <p class = 'interligneValider'></p>
                     <label for = 'pswd'>Votre mot de passe</label></br>
                     <INPUT class = "input" TYPE = 'TEXT', id = 'pswd', name = 'pswd' placeholder = "Au moins 6 caractères" required minlength="6" maxlength="50" size="50"></br>                                 <!--MOT DE PASSE-->
 
                     <p class = 'interligneValider'></p>
                     <INPUT class = "boutonValider" TYPE = 'SUBMIT', VALUE = 'Créer votre compte Percutest'><br>
-                    <p>En créant un compte, vous acceptez les <a href = "">Conditions générales de vente</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "">FAQ</a></p>
+                    <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales de vente</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
                     <p class = 'interligneSeparation'></p>
                     <hr WIDTH = "300" ALIGN = CENTER>
                     <p class = 'interligneSeparation'></p>
-                    <p>Vous possédez déjà un compte ? <a href = "">Identifiez-vous</a></br>
+                    <p>Vous possédez déjà un compte ? <a href = "connexion.php">Identifiez-vous</a></br>
                     Vous voulez vous incrire en tant que sportif ? <a href = "page_enregistrement_sportif">Créer votre compte<?php $AfficherFormulaire = 2?></a></p>
                 </form>
                 </p>
