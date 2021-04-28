@@ -14,9 +14,9 @@
 
         <?php
             $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "myDB";
+            $username = "Percutech";
+            $password = "Boxe_BDD_G8A";
+            $dbname = "percutech";
 
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
