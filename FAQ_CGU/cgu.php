@@ -3,25 +3,16 @@
 <head> 
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
-    <title>Infinite Measures CGU</title>
+    <title>GCU</title>
 </head>
 
 <header>
-	<a href="#Accueil" id="link_logo"><img id="logo" src="Images/Infinite_measures.png"  alt="logo Accueil" /></a>
-	<nav class="navbar">
-		<ul>
-			<li><a href="testnavbar.html" class="button">Inscription</a></li>
-			<li><a href="testnavbar.html" class="button">Connexion</a></li>
-			<li><a href="testnavbar.html" class="button">FAQ</a></li>
-			<li><a href="testnavbar.html" class="button">CGU</a></li>
-		</ul>
-	</nav>
-	<script src=JSNav.js></script>
+	<?php include("menu_nav.php");?>
 </header>
 
 <body>
 <div id="corps_FAQ_CGU">
-	<a id="remonterEnHaut"> </a>
+	<a id="haut"> </a>
 
 <div id="cgu_corps_wrapper">
 
@@ -63,52 +54,48 @@
 
 		<p>L’édition du site Infinite Measures est assurée par la société Percutech, dont le siège social est localisé au 10, rue de Vanves, 92130 Issy-les-Moulineaux, France Métropolitaine.</p>
 
-		<a href="#remonterEnHaut" id="article3" class="cgu_main-titreArticle">Article 3. texte</a> 
+		<a href="#remonterEnHaut" id="article3" class="cgu_main-titreArticle">Article 3. texte</a>
 
 			<h3 id="article3.1" class="cgu_main-soustitreArticle">3.1 texte</h3>
 
 				<p>TEXTE :
 				<ul>
-					<li>Ha</li>
-					<li>He</li>
-					<li>Ho</li>
+					<li>texte</li>
+					<li>texte</li>
+					<li>texte</li>
 				</ul>
 				</p>
 
 				<p>TEXTE 
 				<br/>
-				notre<br/>
-				localisation<br/>
-				contact<br/>
-				texte<br/>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
 				</p>
 
 				<h3 id="article3.2" class="cgu_main-soustitreArticle">3.2 texte</h3>
-				<p>TEXTE</p>
-				<p>texte</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 		<h3 id="article3.3" class="cgu_main-soustitreArticle">3.3 texte</h3>
 
 		<p>TEXTE<br/>
-		mhh <br/>
-		Puis les résultats seront mis à disposition ...<br/>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
 		</p>
 
 		<a href="#remonterEnHaut" id="article4" class="cgu_main-titreArticle">Article 4. texte</a> 
 			<h3 id="article4.1" class="cgu_main-soustitreArticle">4.1 texte</h3>
 
-				<p>TEXTE</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 			<h3 id="article4.2" class="cgu_main-soustitreArticle">4.2 texte</h3> 
-				<p>TEXTE</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 		<a href="#remonterEnHaut" id="article5" class="cgu_main-titreArticle">Article 5. texte</a>
 
 		<p>TEXTE: </p>
 		<ul>
-			<li>Ah</li>
-			<li>Eh</li>  
-			<li>Oh</li>
+			<li>texte</li>
+			<li>texte</li>  
+			<li>texte</li>
 		</ul>
 		
 
@@ -117,13 +104,13 @@
 		<p>TEXTE</p>
 
 			<h3 id="article6.1" class="cgu_main-soustitreArticle">6.1 textes</h3> 
-				<p>TEXTE</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 			<h3 id="article6.2" class="cgu_main-soustitreArticle">6.2 texte</h3>
 			<p>TEXTE :</p>
 			<ol>
-				<li>Yo</li>
-				<li>Hey</li>
+				<li>texte</li>
+				<li>texte</li>
 			</ol>
 			
 		</div>

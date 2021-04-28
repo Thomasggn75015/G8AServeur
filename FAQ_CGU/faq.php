@@ -3,24 +3,16 @@
 <head> 
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
-        <title>Infinite Measures FAQ</title>
+        <title>FAQ</title>
 </head>
 
 <header>
-	<a href="#Accueil" id="link_logo"><img id="logo" src="Images/Infinite_measures.png"  alt="logo Accueil" /></a>
-	<nav class="navbar">
-		<ul>
-			<li><a href="testnavbar.html" class="button">Inscription</a></li>
-			<li><a href="testnavbar.html" class="button">Connexion</a></li>
-			<li><a href="testnavbar.html" class="button">FAQ</a></li>
-			<li><a href="testnavbar.html" class="button">CGU</a></li>
-		</ul>
-	</nav>
-	<script src=JSNav.js></script>
+	<?php include("menu_nav.php");?>
 </header>
 
 <body>
 <div id="corps_FAQ_CGU">
+	
 	<h1 id="faq_cgu-titrePage">FAQ</h1>
 
 	  <div id="faq_main">
@@ -68,6 +60,7 @@
 		  </details>
 
 	  </div>
+
 </div>
 </body>
 
