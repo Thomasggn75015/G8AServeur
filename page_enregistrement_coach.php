@@ -78,7 +78,7 @@
                     $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
                 }
                 else{
-                    $sql = "INSERT INTO Adherents SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."'";
+                    $sql = "INSERT INTO Coach SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."'";
                     if(!mysqli_query($conn, $sql)){
                         echo "Une erreur s'est produite: ".mysqli_error($conn);
                     } else{
