@@ -128,6 +128,7 @@
                 echo "<h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4>";
             }
         }
+        else{echo "erreur";}
         ?>
     </body>
 </html>
