@@ -11,7 +11,7 @@
     </header>
 
     <body>
-        <h1 class = 'titre'><B>Infinite Mesure</B></h1>
+        <h1 class = 'inscription_titre'><B>Infinite Mesure</B></h1>
 
         <?php
             $servername = "localhost";
@@ -76,8 +76,8 @@
                     if(!mysqli_query($conn, $sql)){
                         echo "Une erreur s'est produite: ".mysqli_error($conn);
                     } else{
-                        //echo 'Felicitation pour votre adhésion !';
-                        header('Location: page_vérification.php');
+                        echo 'Felicitation pour votre adhésion !';
+                        //header('Location: page_vérification.php');
                     }
                 }
             }
@@ -85,7 +85,7 @@
         if($AfficherFormulaire == 1){
             //Données en INPUT renseignées par le nouvel adhérents et correspondants aux critères de la table des adhérents.
         ?>
-            <div class = "formulaire">
+            <div class = "inscription_formulaire">
                 <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</B>(coach)</h1>
                 <form class = 'form' ACTION = "page_enregistrement_coach.php" METHOD = "POST">
                     <label for = 'prenom'>Votre prénom</label></br>

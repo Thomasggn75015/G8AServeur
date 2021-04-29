@@ -13,7 +13,7 @@
     <body>
         
 
-        <h1 class = 'titre'><B>Infinite Mesure</B></h1>
+        <h1 class = 'inscription_titre'><B>Infinite Mesure</B></h1>
 
         <?php
             $servername = "localhost";
@@ -98,7 +98,7 @@
         if($AfficherFormulaire == 1){
             //Données en INPUT renseignées par le nouvel adhérents et correspondants aux critères de la table des adhérents.
         ?>
-            <div class = "formulaire">
+            <div class = "inscription_formulaire">
                 <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</B>(sportif)</h1>
                 <form class = 'form' ACTION = "page_enregistrement_sportif.php" METHOD = "POST">
                     <label for = 'prenom'>Votre prénom</label></br>
@@ -135,6 +135,8 @@
 
                 <?php
                 if(isset($_POST['prenom'], $_POST['nom'], $_POST['coach'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'], $_POST['datedenaissance'])){
+                    $erreur_enregistrement = "";
+                    $detect_erreur_enregistrement = 0;
                     //Condition sur le PRENOM
                     if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
                         echo "Le prénom n'est pas valable";
@@ -169,10 +171,13 @@
                     else{
                         $sql = "INSERT INTO Adherents SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', coach = '".$_POST['coach']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."', bithdate = '".$_POST['datedenaissance']."'";
                         if(!mysqli_query($conn, $sql)){
-                            echo "Une erreur s'est produite: ".mysqli_error($conn);
+                            echo "<h4 class = 'erreur'>Une erreur s'est produite: </h4>".mysqli_error($conn);
+                        }
+                        elseif($detect_erreur_enregistrement == 1){
+                            echo
                         } else{
-                            //echo 'Felicitation pour votre adhésion !';
-                            header('Location: page_vérification.php');
+                            echo 'Felicitation pour votre adhésion !';
+                            //header('Location: page_vérification.php');
                         }
                     }
                 }
