@@ -111,6 +111,25 @@ header{
   width: 100%;
 }
 
+.nav_button {
+  border-radius:30px;
+  margin:10px;
+  background-color:#afcae8;
+  padding:15px;
+
+  color:black;
+  font-family: Arial, sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+
+  position:relative;
+  display: inline-block;
+  transition: all .3s;
+  overflow: hidden;
+  vertical-align: middle;
+  z-index: 1;
+}
 
 .sticky {
   position: fixed;
@@ -147,16 +166,6 @@ header{
   margin-top:0px;
 }
 
-
-
-
-
-
-
-
-
-
-
 .bloc_photo{
   display:flex;
   height:500px;
@@ -192,7 +201,7 @@ header{
 }
 
 
-.nav_button[title="bouton_essai"]{
+.paragraphe_bouton .nav_button {
   text-align: center;
   width:50%;
   border:solid 3px black;

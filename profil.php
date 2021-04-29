@@ -13,7 +13,6 @@
     <header><?php include("menu_nav.php");?></header>
 
     <body class="profil_corps">
-    <h1>Coucou c'est le profil</h1>
         <?php
             // Create connection
             try{
@@ -27,17 +26,28 @@
             $infos_profil->execute($_SESSION['id']);
         ?>
 
+<!--
+        <div class="profil_infos-block">
+            <h1><#?php echo 'Bienvenue sur votre profil' . $infos_profil['firstname'] . $infos_profil['lastname']; ?></h1>
+            <ul>
+                <li><#?php echo 'Pseudonyme : ' . $infos_profil['pseudo']?></li>
+                <li><#?php echo 'Adresse mail : ' . $infos_profil['email']?></li>
+            </ul>
+        </div>
+        -->
+
+
         <div class="profil_form-block">
-        <h1>Informations du profil</h1>
-        <form class="profil_form-modif" method="post" action="profil.php">
-            <label for="pseudo">Changer le pseudonyme</label>
-            <input type="text" id="pseudo" name="pseudo" placeholder="Nouveau pseudo"/>
-            <label for="mdp">Changer le mot de passe</label>
-            <input type="text" id="mdp" name="mdp" placeholder="Nouveau mot de passe"/>
-            <label for="email">Changer l'email</label>
-            <input type="text" id="email" name="email" placeholder="Nouvel email"/>
-            <input type="submit" value="Valider"/>
-        </form>
+            <h1>Modification du profil</h1>
+            <form class="profil_form-modif" method="post" action="profil.php">
+                <label for="pseudo">Changer le pseudonyme</label>
+                <input type="text" id="pseudo" name="pseudo" placeholder="Nouveau pseudo"/>
+                <label for="mdp">Changer le mot de passe</label>
+                <input type="text" id="mdp" name="mdp" placeholder="Nouveau mot de passe"/>
+                <label for="email">Changer l'email</label>
+                <input type="text" id="email" name="email" placeholder="Nouvel email"/>
+                <input type="submit" value="Valider"/>
+            </form>
         </div>
     </body>
 </html>
