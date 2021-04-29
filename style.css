@@ -43,6 +43,7 @@ header{
   margin-left:20px;
   margin-top:5px;
 }
+
 #logo{
   display:flex;
   justify-content: center;
@@ -61,7 +62,6 @@ header{
 }
 
 .navbar li{
-
   display:inline-block;
   height:auto;
 }
@@ -77,7 +77,6 @@ header{
   border: hidden 3px white;
   transition: border 0.5s ease-out;
 }
-
 
 #logo:hover{
   border-left: solid 3px white;
@@ -129,14 +128,13 @@ header{
   overflow: hidden;
   vertical-align: middle;
   z-index: 1;
-  }
+}
 
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
-
 /* --------------------------------------------------------------------------------------- */
 
 
@@ -198,12 +196,224 @@ header{
   margin-bottom:30px;
 }
 
-.nav_button[title="bouton_inscription"]{
+.paragraphe_bouton .nav_button {
   text-align: center;
   width:50%;
   border:solid 3px black;
 }
+/* --------------------------------------------------------------------------------------- */
 
 
+/* --------------------------------------- INSCRIPTION ----------------------------------- */
+.enregistrement_titre{
+  text-align: center; 
+  font-size : 30px;
+}
 
+.erreur_enregistrement{
+  font-size: 20px;
+  text-align: center;
+  color : red;
+}
+
+.interligneValider_enregistrement{font-size: 20px;}
+
+.input_enregistrement{
+  border-radius: 5px;
+  width : 100%;
+  font-size: 18px;
+}
+
+.input_enregistrement:hover, .input_enregistrement:focus{
+  box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.452);
+}
+
+.enregistrement_formulaire{
+  width:600px;
+  margin:0 auto;
+  margin-top:1%;
+  background-color: #afcae8;
+  padding : 30px;
+  box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.452);
+  border-radius: 10px;
+}
+
+.enregistrement_formulaire h1{
+  width: 100%;
+  font-size: 30px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.boutonValider_enregistrement{
+  background-color: #2b08f5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.boutonValider_enregistrement:hover{
+  background-color: white;
+  color: #7846a1;
+  border: 1px solid #7846a1;
+}
+
+.enregistrement_formulaire label{
+  font-size: 20px;
+}
+/* --------------------------------------------------------------------------------------- */
+
+/* --------------------------------------- FAQ ------------------------------------------- */
+#corps_FAQ_CGU {
+  margin: 0;
+  font-family:'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: #000000;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: .5px;
+}
+
+  #faq_cgu-titrePage {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 50px;
+    margin-top: 50px
+  }
+
+  #faq_main {
+    max-width: 750px; /*ça change la largeur FAQ...*/
+    margin: auto;
+    padding-bottom: 10px;
+  }
+
+  .faq_main-question {
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #fafafa;
+    background-image: linear-gradient(90deg,rgb(151, 188, 230),rgb(179, 128, 255));
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: .25rem;
+    text-align: left;
+    cursor: pointer;
+    position: relative
+  }
+
+  .faq_main_reponse {
+    text-align: left
+  }
+
+  .faq_main-details [open] .faq_main-question ~ * {
+      animation: sweep .5s ease-in-out
+  }
+
+    @keyframes sweep {
+      0% {opacity: 0; margin-top: -10px}
+      100% {opacity: 1; margin-top: 0}
+    }
+    
+    .faq_main-details > .faq_main-question::after {
+      position: absolute;
+      content: "+";
+      right: 20px
+    }
+
+    .faq_main-details [open] > .faq_main-question::after {
+      position: absolute;
+      content: "-";
+      right: 20px
+    }
+
+    .faq_main-details > .faq_main-question::-webkit-details-marker {
+      display: none
+    }
+
+    .faq_main-details [open] .faq_main-question ~ * {
+      animation: sweep .5s ease-in-out;
+    }
+
+    @keyframes sweep {
+      0%    {opacity: 0; margin-top: -10px}
+      100%  {opacity: 1; margin-top: 0px}
+    }
+/* --------------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------- CGU ------------------------------------------- */
+@media screen and (max-width: 560px) {
+  #main_FAQ_CGU
+    {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    }
+  .cgu_menu{
+    display: none;
+    }
+}
+
+#cgu_corps_wrapper {
+  display: inline-flex;
+}
+
+.cgu_menu {
+  /*float: left;*/
+  display: inline-block;
+  width: 450px;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-right: 3px ridge #afcae8;
+  margin-top: 0;
+}
+
+.cqu_main {
+  margin-left: 30px;
+  margin-top: 0;
+  padding-left: 10px;
+}
+
+.cgu_menu a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 8pt;
+  text-decoration: none;
+}
+
+.cgu_menu a:hover {
+  text-decoration: underline;
+}
+
+#cgu_menu-titreArticle {
+  margin-left: 20px;
+  font-size: 12pt;
+  list-style: none;
+}
+
+.cgu_main-titreArticle {
+  font-size: 16pt;
+  color: #afcae8;
+  text-decoration: none;
+}
+
+.cgu_main-soustitreArticle {
+  font-size: 14pt;
+}
+
+.cqu_main li {
+  list-style: none;
+}
 /* --------------------------------------------------------------------------------------- */

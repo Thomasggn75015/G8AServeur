@@ -2,7 +2,7 @@
 <html>
 <head> 
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style_viviane.css" />
+        <link rel="stylesheet" href="style.css" />
         <title>FAQ</title>
 </head>
 
