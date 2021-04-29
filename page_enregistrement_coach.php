@@ -3,7 +3,7 @@
     <head>
         <title>Notre première instruction : echo</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style_enregistrement_sportif.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <header>
@@ -51,37 +51,31 @@
                 $detail_erreur_enregistrement = "";
                 //Condition sur le PRENOM
                 if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
-                    echo"prenom";
                     $detail_erreur_enregistrement = "Le prénom utilisé n'est pas valide";
                     $detection_erreur_enregistrement = 1;
                 }
                 //Condition sur le NOM
                 elseif(!preg_match("#^[A-Z]+$#",$_POST['nom'])){
-                    echo"nom";
                     $detection_erreur_enregistrement = 1;
                     $detail_erreur_enregistrement = "Le nom n'est pas valide / Le nom doit être en majuscule";
                 }
                 
                 //Condition sur le PSEUDO
                 elseif(!preg_match("#^[a-zA-Z0-9]+$#",$_POST['pseudo'])){
-                    echo "pseudo";
                     $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
                     $detection_erreur_enregistrement = 1;
                 }
                 elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                    echo "pseudo utilise";
                     $detection_erreur_enregistrement = 1;
                     $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
                 }
                 //Condition sur le MOT DE PASSE
                 elseif(!preg_match("#^[a-z0-9]+$#",$_POST['pswd'])){
-                    echo "mdp";
                     $detection_erreur_enregistrement = 1;
                     $detail_erreur_enregistrement = "Le format du mot de passe n'est pas valable";
                 }
                 //Condition sur l'e-mail
                 elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE pseudo='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                    echo "email";
                     $detection_erreur_enregistrement = 1;
                     $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
                 }
@@ -124,7 +118,7 @@
 
                     <p class = 'interligneValider_enregistrement'></p>
                     <INPUT class = "boutonValider_enregistrement" TYPE = 'SUBMIT', VALUE = 'Créer votre compte Percutest'><br>
-                    <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales de vente</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
+                    <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales d'utilisation</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
                     <p class = 'interligneValider_enregistrement'></p>
                     <hr WIDTH = "300" ALIGN = CENTER>
                     <p class = 'interligneValider_enregistrement'></p>
