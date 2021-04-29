@@ -109,7 +109,7 @@
                         $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
                         $detection_erreur_enregistrement = 1;
                     }
-                    elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                    elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Adherents WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
                         $detection_erreur_enregistrement = 1;
                         $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
                     }
@@ -124,7 +124,7 @@
                         $detail_erreur_enregistrement = "La date de naissance renseignée n'est pas valable";
                     }
                     //Condition sur l'e-mail
-                    elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE email='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                    elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Adherents WHERE email='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
                         $detection_erreur_enregistrement = 1;
                         $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
                     }
