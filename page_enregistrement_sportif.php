@@ -5,7 +5,6 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_enregistrement_sportif.css" />
     </head>
-<<<<<<< HEAD
 
     <header>
         <?php include("menu_nav.php");?>
@@ -15,16 +14,6 @@
         
 
         <h1 class = 'inscription_titre'><B>Infinite Mesure</B></h1>
-=======
-
-    <header>
-        <?php include("menu_nav.php");?>
-    </header>
-
-    <body>
-        
-        <h1 class = 'enregistrement_titre'><B>Infinite Mesure</B></h1>
->>>>>>> devMax
 
         <?php
             $servername = "localhost";
@@ -63,11 +52,8 @@
         if($AfficherFormulaire == 1){
             //Données en INPUT renseignées par le nouvel adhérents et correspondants aux critères de la table des adhérents.
         ?>
-<<<<<<< HEAD
-            <div class = "inscription_formulaire">
-=======
+
             <div class = "enregistrement_formulaire">
->>>>>>> devMax
                 <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</B>(sportif)</h1>
                 <form class = 'form' ACTION = "page_enregistrement_sportif.php" METHOD = "POST">
                     <label for = 'prenom'>Votre prénom</label></br>
@@ -104,14 +90,9 @@
 
                 <?php
                 if(isset($_POST['prenom'], $_POST['nom'], $_POST['coach'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'], $_POST['datedenaissance'])){
-<<<<<<< HEAD
-                    $erreur_enregistrement = "";
-                    $detect_erreur_enregistrement = 0;
-                    //Condition sur le PRENOM
-=======
+
                     $detection_erreur_enregistrement = 0;
                     $detail_erreur_enregistrement = "";
->>>>>>> devMax
                     if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
                         //echo "Le prénom n'est pas valable";
                         $detail_erreur_enregistrement = "Le prénom utilisé n'est pas valide";

@@ -5,7 +5,6 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_enregistrement_sportif.css" />
     </head>
-<<<<<<< HEAD
 
     <header>
         <?php include("menu_nav.php");?>
@@ -13,16 +12,6 @@
 
     <body>
         <h1 class = 'inscription_titre'><B>Infinite Mesure</B></h1>
-=======
-
-    <header>
-        <?php include("menu_nav.php");?>
-    </header>
-
-    <body>
-
-        <h1 class = 'enregistrement_titre'><B>Infinite Mesure</B></h1>
->>>>>>> devMax
 
         <?php
             $servername = "localhost";
@@ -108,11 +97,8 @@
         if($AfficherFormulaire == 1){
             //Données en INPUT renseignées par le nouvel adhérents et correspondants aux critères de la table des adhérents.
         ?>
-<<<<<<< HEAD
-            <div class = "inscription_formulaire">
-=======
+
             <div class = "enregistrement_formulaire">
->>>>>>> devMax
                 <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</B>(coach)</h1>
                 <form class = 'form' ACTION = "page_enregistrement_coach.php" METHOD = "POST">
                     <label for = 'prenom'>Votre prénom</label></br>
