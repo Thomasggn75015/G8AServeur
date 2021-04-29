@@ -5,18 +5,21 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_enregistrement_sportif.css" />
     </head>
+
+    <header>
+        <?php include("menu_nav.php");?>
+    </header>
+
     <body>
-        <header>
-            <h1 class = "entete">En tête à remplacer par celui de Thomas</h1>
-        </header>
+        
 
         <h1 class = 'titre'><B>Infinite Mesure</B></h1>
 
         <?php
             $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "myDB";
+            $username = "Percutech";
+            $password = "Boxe_BDD_G8A";
+            $dbname = "percutech";
 
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -126,7 +129,7 @@
                     <hr WIDTH = "300" ALIGN = CENTER>
                     <p class = 'interligneSeparation'></p>
                     <p>Vous possédez déjà un compte ? <a href = "connexion.php">Identifiez-vous</a></br>
-                    Vous voulez vous incrire en tant qu'entraîneur sportif ? <a href = "page_enregistrement_coach">Créer votre compte<?php $AfficherFormulaire = 2?></a></p>
+                    Vous voulez vous incrire en tant qu'entraîneur sportif ? <a href = "page_enregistrement_coach.php">Créer votre compte<?php $AfficherFormulaire = 2?></a></p>
                 </form>
                 </p>
 

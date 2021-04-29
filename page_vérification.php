@@ -5,12 +5,13 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_enregistrement_sportif.css" />
     </head>
-    <body>
-        <header>
-            <h1 class = "entete">En tête à remplacer par celui de Thomas</h1>
-        </header>
 
-        <h1 class = 'titre'><B>Infinite Mesure</B></h1>
+    <header>
+            <?php include("menu_nav.php");?>    
+    </header>
+
+    <body>
+         <h1 class = 'titre'><B>Infinite Mesure</B></h1>
 
         <?php
             $AfficherConfirmation = 1;
