@@ -77,58 +77,59 @@
                     Vous voulez vous incrire en tant que sportif ? <a href = "page_enregistrement_sportif.php">Créer votre compte<?php $AfficherFormulaire = 2?></a></p>
                 </form>
                 </p>
+                <?php
+                    if(isset($_POST['prenom'], $_POST['nom'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'])){
+                        $detection_erreur_enregistrement = 0;
+                        $detail_erreur_enregistrement = "";
+                        //Condition sur le PRENOM
+                        if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
+                            $detail_erreur_enregistrement = "Le prénom utilisé n'est pas valide";
+                            $detection_erreur_enregistrement = 1;
+                        }
+                        //Condition sur le NOM
+                        elseif(!preg_match("#^[A-Z]+$#",$_POST['nom'])){
+                            $detection_erreur_enregistrement = 1;
+                            $detail_erreur_enregistrement = "Le nom n'est pas valide / Le nom doit être en majuscule";
+                        }
+                        
+                        //Condition sur le PSEUDO
+                        elseif(!preg_match("#^[a-zA-Z0-9]+$#",$_POST['pseudo'])){
+                            $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
+                            $detection_erreur_enregistrement = 1;
+                        }
+                        elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Coach WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                            $detection_erreur_enregistrement = 1;
+                            $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
+                        }
+                        //Condition sur le MOT DE PASSE
+                        elseif(!preg_match("#^[a-z0-9]+$#",$_POST['pswd'])){
+                            $detection_erreur_enregistrement = 1;
+                            $detail_erreur_enregistrement = "Le format du mot de passe n'est pas valable";
+                        }
+                        //Condition sur l'e-mail
+                        elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Coach WHERE pseudo='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                            $detection_erreur_enregistrement = 1;
+                            $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
+                        }
+                        else{
+                            $sql = "INSERT INTO Coach SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."'";
+                            if(!mysqli_query($conn, $sql)){
+                                echo "Une erreur s'est produite: ".mysqli_error($conn);
+                            } else{
+                                echo 'Felicitation pour votre adhésion !';
+                                //header('Location: page_vérification.php');
+                            }
+                        }
+
+                        if($detection_erreur_enregistrement == 1){
+                            echo "<h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4>";
+                        }
+                    }
+                ?>
             </div>
         <?php
         }
 
-        if(isset($_POST['prenom'], $_POST['nom'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'])){
-            $detection_erreur_enregistrement = 0;
-            $detail_erreur_enregistrement = "";
-            //Condition sur le PRENOM
-            if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
-                $detail_erreur_enregistrement = "Le prénom utilisé n'est pas valide";
-                $detection_erreur_enregistrement = 1;
-            }
-            //Condition sur le NOM
-            elseif(!preg_match("#^[A-Z]+$#",$_POST['nom'])){
-                $detection_erreur_enregistrement = 1;
-                $detail_erreur_enregistrement = "Le nom n'est pas valide / Le nom doit être en majuscule";
-            }
-            
-            //Condition sur le PSEUDO
-            elseif(!preg_match("#^[a-zA-Z0-9]+$#",$_POST['pseudo'])){
-                $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
-                $detection_erreur_enregistrement = 1;
-            }
-            elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Coach WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                $detection_erreur_enregistrement = 1;
-                $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
-            }
-            //Condition sur le MOT DE PASSE
-            elseif(!preg_match("#^[a-z0-9]+$#",$_POST['pswd'])){
-                $detection_erreur_enregistrement = 1;
-                $detail_erreur_enregistrement = "Le format du mot de passe n'est pas valable";
-            }
-            //Condition sur l'e-mail
-            elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Coach WHERE pseudo='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                $detection_erreur_enregistrement = 1;
-                $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
-            }
-            else{
-                $sql = "INSERT INTO Coach SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."'";
-                if(!mysqli_query($conn, $sql)){
-                    echo "Une erreur s'est produite: ".mysqli_error($conn);
-                } else{
-                    echo 'Felicitation pour votre adhésion !';
-                    //header('Location: page_vérification.php');
-                }
-            }
-
-            if($detection_erreur_enregistrement == 1){
-                echo "<h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4>";
-            }
-        }
-        else{echo "erreur";}
         ?>
     </body>
 </html>
