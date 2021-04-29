@@ -75,7 +75,7 @@
 
                     <p class = 'interligneValider_enregistrement'></p>
                     <INPUT class = "boutonValider_enregistrement" TYPE = 'SUBMIT', VALUE = 'Créer votre compte Percutest'><br>
-                    <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales de'utilisation</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
+                    <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales d'utilisation</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
                     <p class = 'interligneValider_enregistrement'></p>
                     <hr WIDTH = "300" ALIGN = CENTER>
                     <p class = 'interligneValider_enregistrement'></p>
