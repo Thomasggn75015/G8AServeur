@@ -129,7 +129,7 @@ header{
   overflow: hidden;
   vertical-align: middle;
   z-index: 1;
-  }
+}
 
 .sticky {
   position: fixed;
@@ -198,7 +198,8 @@ header{
   margin-bottom:30px;
 }
 
-.nav_button[title="bouton_inscription"]{
+
+.paragraphe_bouton .nav_button {
   text-align: center;
   width:50%;
   border:solid 3px black;
