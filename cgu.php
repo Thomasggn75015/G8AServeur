@@ -2,8 +2,8 @@
 <html lang="fr">
 <head> 
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style_viviane.css" />
-    <title>GCU</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>CGU</title>
 </head>
 
 <header>
