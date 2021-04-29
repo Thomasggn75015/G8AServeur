@@ -13,7 +13,7 @@
     <body>
         
 
-        <h1 class = 'inscription_titre'><B>Infinite Mesure</B></h1>
+        <h1 class = 'enregistrement_titre'><B>Infinite Mesure</B></h1>
 
         <?php
             $servername = "localhost";
