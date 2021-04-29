@@ -44,59 +44,6 @@
             //Vérification des conditions dans la mise en forme des données et insertion des information dans la table des adhérents.
 
             $AfficherFormulaire = 1;
-            if(isset($_POST['prenom'], $_POST['nom'], $_POST['coach'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'], $_POST['datedenaissance'])){
-                $detection_erreur_enregistrement = 0;
-                $detail_erreur_enregistrement = "";
-                //Condition sur le PRENOM
-                if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
-                    echo"prenom";
-                    $detail_erreur_enregistrement = "Le prénom utilisé n'est pas valide";
-                    $detection_erreur_enregistrement = 1;
-                }
-                //Condition sur le NOM
-                elseif(!preg_match("#^[A-Z]+$#",$_POST['nom'])){
-                    echo"nom";
-                    $detection_erreur_enregistrement = 1;
-                    $detail_erreur_enregistrement = "Le nom n'est pas valide / Le nom doit être en majuscule";
-                }
-                
-                //Condition sur le PSEUDO
-                elseif(!preg_match("#^[a-zA-Z0-9]+$#",$_POST['pseudo'])){
-                    echo "pseudo";
-                    $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
-                    $detection_erreur_enregistrement = 1;
-                }
-                elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                    echo "pseudo utilise";
-                    $detection_erreur_enregistrement = 1;
-                    $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
-                }
-                //Condition sur le MOT DE PASSE
-                elseif(!preg_match("#^[a-z0-9]+$#",$_POST['pswd'])){
-                    echo "mdp";
-                    $detection_erreur_enregistrement = 1;
-                    $detail_erreur_enregistrement = "Le format du mot de passe n'est pas valable";
-                }
-                //Condition sur l'e-mail
-                elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE pseudo='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                    echo "email";
-                    $detection_erreur_enregistrement = 1;
-                    $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
-                }
-                else{
-                    $sql = "INSERT INTO Adherents SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."'";
-                    if(!mysqli_query($conn, $sql)){
-                        echo "Une erreur s'est produite: ".mysqli_error($conn);
-                    } else{
-                        echo 'Felicitation pour votre adhésion !';
-                        //header('Location: page_vérification.php');
-                    }
-                }
-
-                if($detection_erreur_enregistrement == 1){
-                    echo "<h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4>";
-                }
-            }
         
         if($AfficherFormulaire == 1){
             //Données en INPUT renseignées par le nouvel adhérents et correspondants aux critères de la table des adhérents.
@@ -122,7 +69,7 @@
 
                     <p class = 'interligneValider_enregistrement'></p>
                     <INPUT class = "boutonValider_enregistrement" TYPE = 'SUBMIT', VALUE = 'Créer votre compte Percutest'><br>
-                    <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales de vente</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
+                    <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales d'utilisation</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
                     <p class = 'interligneValider_enregistrement'></p>
                     <hr WIDTH = "300" ALIGN = CENTER>
                     <p class = 'interligneValider_enregistrement'></p>
@@ -132,6 +79,54 @@
                 </p>
             </div>
         <?php
+        }
+
+        if(isset($_POST['prenom'], $_POST['nom'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'])){
+            $detection_erreur_enregistrement = 0;
+            $detail_erreur_enregistrement = "";
+            //Condition sur le PRENOM
+            if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
+                $detail_erreur_enregistrement = "Le prénom utilisé n'est pas valide";
+                $detection_erreur_enregistrement = 1;
+            }
+            //Condition sur le NOM
+            elseif(!preg_match("#^[A-Z]+$#",$_POST['nom'])){
+                $detection_erreur_enregistrement = 1;
+                $detail_erreur_enregistrement = "Le nom n'est pas valide / Le nom doit être en majuscule";
+            }
+            
+            //Condition sur le PSEUDO
+            elseif(!preg_match("#^[a-zA-Z0-9]+$#",$_POST['pseudo'])){
+                $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
+                $detection_erreur_enregistrement = 1;
+            }
+            elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Coach WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                $detection_erreur_enregistrement = 1;
+                $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
+            }
+            //Condition sur le MOT DE PASSE
+            elseif(!preg_match("#^[a-z0-9]+$#",$_POST['pswd'])){
+                $detection_erreur_enregistrement = 1;
+                $detail_erreur_enregistrement = "Le format du mot de passe n'est pas valable";
+            }
+            //Condition sur l'e-mail
+            elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Coach WHERE pseudo='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                $detection_erreur_enregistrement = 1;
+                $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
+            }
+            else{
+                $sql = "INSERT INTO Coach SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."'";
+                if(!mysqli_query($conn, $sql)){
+                    echo "Une erreur s'est produite: ".mysqli_error($conn);
+                } else{
+                    echo 'Felicitation pour votre adhésion !';
+                    //header('Location: page_vérification.php');
+                }
+            }
+
+            if($detection_erreur_enregistrement == 1){
+                echo "<h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4>";
+            }
         }
         ?>
     </body>
