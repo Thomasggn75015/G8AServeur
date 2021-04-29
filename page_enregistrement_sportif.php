@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Notre première instruction : echo</title>
+        <title>Inscription (sportif)</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
     </head>
@@ -11,10 +11,6 @@
     </header>
 
     <body>
-        
-
-        <h1 class = 'enregistrement_titre'><B>Infinite Mesure</B></h1>
-
         <?php
             $servername = "localhost";
             $username = "Percutech";
