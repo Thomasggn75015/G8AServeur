@@ -1,15 +1,7 @@
 body{background-color: #97bce6;}
 
-<<<<<<< HEAD
-.entete{
-    text-align : center; 
-    color : red;
-}
 
-.inscription_titre{
-=======
 .enregistrement_titre{
->>>>>>> devMax
     text-align: center; 
     font-size : 30px;
 }
@@ -32,11 +24,8 @@ body{background-color: #97bce6;}
     box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.452);
 }
 
-<<<<<<< HEAD
-.inscription_formulaire{
-=======
+
 .enregistrement_formulaire{
->>>>>>> devMax
     width:600px;
     margin:0 auto;
     margin-top:1%;
@@ -46,11 +35,8 @@ body{background-color: #97bce6;}
     border-radius: 10px;
 }
 
-<<<<<<< HEAD
-.inscription_formulaire h1{
-=======
+
 .enregistrement_formulaire h1{
->>>>>>> devMax
     width: 100%;
     font-size: 30px;
     margin: 0 auto;
@@ -75,11 +61,6 @@ body{background-color: #97bce6;}
     border: 1px solid #7846a1;
 }
 
-<<<<<<< HEAD
-.inscription_formulaire label{
-=======
-
 .enregistrement_formulaire label{
->>>>>>> devMax
     font-size: 20px;
 }
