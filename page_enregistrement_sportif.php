@@ -3,7 +3,7 @@
     <head>
         <title>Notre première instruction : echo</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style_enregistrement_sportif.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <header>
