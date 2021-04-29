@@ -1,32 +1,42 @@
 body{background-color: #97bce6;}
 
+<<<<<<< HEAD
 .entete{
     text-align : center; 
     color : red;
 }
 
 .inscription_titre{
+=======
+.enregistrement_titre{
+>>>>>>> devMax
     text-align: center; 
     font-size : 30px;
 }
 
-.erreur{
+.erreur_enregistrement{
     font-size: 20px;
     text-align: center;
     color : red;
 }
 
-.interligneValider{font-size: 20px;}
+.interligneValider_enregistrement{font-size: 20px;}
 
-input{
+.input_enregistrement{
     border-radius: 5px;
+    width : 100%;
+    font-size: 18px;
 }
 
-input:hover, input:focus{
+.input_enregistrement:hover, input_enregistrement:focus{
     box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.452);
 }
 
+<<<<<<< HEAD
 .inscription_formulaire{
+=======
+.enregistrement_formulaire{
+>>>>>>> devMax
     width:600px;
     margin:0 auto;
     margin-top:1%;
@@ -36,28 +46,18 @@ input:hover, input:focus{
     border-radius: 10px;
 }
 
+<<<<<<< HEAD
 .inscription_formulaire h1{
+=======
+.enregistrement_formulaire h1{
+>>>>>>> devMax
     width: 100%;
     font-size: 30px;
     margin: 0 auto;
     padding-bottom: 10px;
 }
 
-input{
-    width : 100%;
-    font-size: 18px;;
-}
-/*
-input[type = prenom], input[type = nom], input[type = pseudo]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 3px solid rgb(58, 60, 155);
-    box-sizing: border-box;
-}
-*/
-input[type=submit] {
+.boutonValider_enregistrement{
     background-color: #2b08f5;
     color: white;
     padding: 14px 20px;
@@ -66,14 +66,20 @@ input[type=submit] {
     cursor: pointer;
     width: 100%;
     margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
 }
-
-input[type=submit]:hover {
+.boutonValider_enregistrement:hover{
     background-color: white;
     color: #7846a1;
     border: 1px solid #7846a1;
 }
 
+<<<<<<< HEAD
 .inscription_formulaire label{
+=======
+
+.enregistrement_formulaire label{
+>>>>>>> devMax
     font-size: 20px;
 }

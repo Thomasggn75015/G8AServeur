@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Infinite Mesure</title>
+        <title>Notre première instruction : echo</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_enregistrement_sportif.css" />
     </head>
+<<<<<<< HEAD
 
     <header>
         <?php include("menu_nav.php");?>
@@ -12,6 +13,16 @@
 
     <body>
         <h1 class = 'inscription_titre'><B>Infinite Mesure</B></h1>
+=======
+
+    <header>
+            <?php include("menu_nav.php");?>
+    </header>
+
+    <body>
+
+        <h1 class = 'enregistrement_titre'><B>Infinite Mesure</B></h1>
+>>>>>>> devMax
 
         <?php
             $servername = "localhost";
@@ -47,29 +58,37 @@
 
             $AfficherFormulaire = 1;
             if(isset($_POST['prenom'], $_POST['nom'], $_POST['coach'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'], $_POST['datedenaissance'])){
+                $detection_erreur_enregistrement = 0;
+                $detail_erreur_enregistrement = "";
                 //Condition sur le PRENOM
                 if(!preg_match("#^[a-zA-Z]+$#",$_POST['prenom'])){
-                    echo "Le prénom n'est pas valable";
+                    $detail_erreur_enregistrement = "Le prénom utilisé n'est pas valide";
+                    $detection_erreur_enregistrement = 1;
                 }
                 //Condition sur le NOM
                 elseif(!preg_match("#^[A-Z]+$#",$_POST['nom'])){
-                    echo "Le nom doit être en majuscule";
+                    $detection_erreur_enregistrement = 1;
+                    $detail_erreur_enregistrement = "Le nom n'est pas valide / Le nom doit être en majuscule";
                 }
                 
                 //Condition sur le PSEUDO
                 elseif(!preg_match("#^[a-zA-Z0-9]+$#",$_POST['pseudo'])){
-                    echo "Votre nom d'utilisateur doit être en caractère alphanumérique";
+                    $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
+                    $detection_erreur_enregistrement = 1;
                 }
                 elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                    echo "Ce pseudo est déjà utilisé.";
+                    $detection_erreur_enregistrement = 1;
+                    $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
                 }
                 //Condition sur le MOT DE PASSE
                 elseif(!preg_match("#^[a-z0-9]+$#",$_POST['pswd'])){
-                    echo "Le format du mot de passe n'est pas valable";
+                    $detection_erreur_enregistrement = 1;
+                    $detail_erreur_enregistrement = "Le format du mot de passe n'est pas valable";
                 }
                 //Condition sur l'e-mail
                 elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM adherents WHERE pseudo='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
-                    echo "Cet email est déjà utilisé.";
+                    $detection_erreur_enregistrement = 1;
+                    $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
                 }
                 else{
                     $sql = "INSERT INTO Adherents SET firstname = '".$_POST['prenom']."', lastename = '".$_POST['nom']."', pseudo = '".$_POST['pseudo']."', mdp = '".$_POST['pswd']."', email = '".$_POST['email']."'";
@@ -80,35 +99,43 @@
                         //header('Location: page_vérification.php');
                     }
                 }
+
+                if($detection_erreur_enregistrement == 1){
+                    echo "<h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4>";
+                }
             }
         
         if($AfficherFormulaire == 1){
             //Données en INPUT renseignées par le nouvel adhérents et correspondants aux critères de la table des adhérents.
         ?>
+<<<<<<< HEAD
             <div class = "inscription_formulaire">
+=======
+            <div class = "enregistrement_formulaire">
+>>>>>>> devMax
                 <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</B>(coach)</h1>
                 <form class = 'form' ACTION = "page_enregistrement_coach.php" METHOD = "POST">
                     <label for = 'prenom'>Votre prénom</label></br>
-                    <INPUT class = "input" TYPE = 'TEXT', id = 'prenom', name = 'prenom' placeholder = 'Prénom' required minlength="2" maxlength="50" size="50"></br>                                            <!--PRENOM-->
-                    <p class = 'interligneValider'></p>
+                    <INPUT class = "input_enregistrement" TYPE = 'TEXT', id = 'prenom', name = 'prenom' placeholder = 'Prénom' required minlength="2" maxlength="50" size="50"></br>                                            <!--PRENOM-->
+                    <p class = 'interligneValider_enregistrement'></p>
                     <label for = 'nom'>Votre nom</label></br>
-                    <INPUT class = "input" TYPE = 'TEXT', id = 'nom', name = 'nom' placeholder = 'NOM' required minlength="2" maxlength="50" size="50"></br>                                                     <!--NOM-->
-                    <p class = 'interligneValider'></p>
+                    <INPUT class = "input_enregistrement" TYPE = 'TEXT', id = 'nom', name = 'nom' placeholder = 'NOM' required minlength="2" maxlength="50" size="50"></br>                                                     <!--NOM-->
+                    <p class = 'interligneValider_enregistrement'></p>
                     <label for = 'pseudo'>Votre pseudo</label></br>
-                    <INPUT class = "input" TYPE = 'TEXT', id = 'pseudo', name = 'pseudo' placeholder = "pseudo" required minlength="2" maxlength="50" size="50"></br>                                            <!--PSEUDO-->
-                    <p class = 'interligneValider'></p>
+                    <INPUT class = "input_enregistrement" TYPE = 'TEXT', id = 'pseudo', name = 'pseudo' placeholder = "pseudo" required minlength="2" maxlength="50" size="50"></br>                                            <!--PSEUDO-->
+                    <p class = 'interligneValider_enregistrement'></p>
                     <label for = 'email'>E-mail</label></br>
-                    <INPUT class = "input" TYPE = 'EMAIL', id = 'email', name = 'email' placeholder = "e-mail" required minlength="2" maxlength="50" size="50"></br>                                             <!--E-MAIL-->
-                    <p class = 'interligneValider'></p>
+                    <INPUT class = "input_enregistrement" TYPE = 'EMAIL', id = 'email', name = 'email' placeholder = "e-mail" required minlength="2" maxlength="50" size="50"></br>                                             <!--E-MAIL-->
+                    <p class = 'interligneValider_enregistrement'></p>
                     <label for = 'pswd'>Votre mot de passe</label></br>
-                    <INPUT class = "input" TYPE = 'TEXT', id = 'pswd', name = 'pswd' placeholder = "Au moins 6 caractères" required minlength="6" maxlength="50" size="50"></br>                                 <!--MOT DE PASSE-->
+                    <INPUT class = "input_enregistrement" TYPE = 'TEXT', id = 'pswd', name = 'pswd' placeholder = "Au moins 6 caractères" required minlength="6" maxlength="50" size="50"></br>                                 <!--MOT DE PASSE-->
 
-                    <p class = 'interligneValider'></p>
-                    <INPUT class = "boutonValider" TYPE = 'SUBMIT', VALUE = 'Créer votre compte Percutest'><br>
+                    <p class = 'interligneValider_enregistrement'></p>
+                    <INPUT class = "boutonValider_enregistrement" TYPE = 'SUBMIT', VALUE = 'Créer votre compte Percutest'><br>
                     <p>En créant un compte, vous acceptez les <a href = "cgu.php">Conditions générales de vente</a> d'Infinite Mesure. Pour toute question, veuillez consulter notre <a href = "faq.php">FAQ</a></p>
-                    <p class = 'interligneSeparation'></p>
+                    <p class = 'interligneValider_enregistrement'></p>
                     <hr WIDTH = "300" ALIGN = CENTER>
-                    <p class = 'interligneSeparation'></p>
+                    <p class = 'interligneValider_enregistrement'></p>
                     <p>Vous possédez déjà un compte ? <a href = "connexion.php">Identifiez-vous</a></br>
                     Vous voulez vous incrire en tant que sportif ? <a href = "page_enregistrement_sportif.php">Créer votre compte<?php $AfficherFormulaire = 2?></a></p>
                 </form>
