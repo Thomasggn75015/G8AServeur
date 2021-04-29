@@ -1,28 +1,21 @@
-body{margin:0;}
+body{
+  margin:0;
+  background: linear-gradient(128deg, #6192f7, #4769d5);
+  background-size: 400% 400%;
 
-.body_accueil {
-    background: linear-gradient(123deg, #cdcdce, #73a1d5, #d2e7ff);
-    background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 36s ease infinite;
-    -moz-animation: AnimationName 36s ease infinite;
-    animation: AnimationName 36s ease infinite;
+  -webkit-animation: AnimationName 7s ease infinite;
+  animation: AnimationName 7s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 44%}
-    50%{background-position:100% 57%}
-    100%{background-position:0% 44%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 44%}
-    50%{background-position:100% 57%}
-    100%{background-position:0% 44%}
+  0%{background-position:0% 58%}
+  50%{background-position:100% 43%}
+  100%{background-position:0% 58%}
 }
 @keyframes AnimationName { 
-    0%{background-position:0% 44%}
-    50%{background-position:100% 57%}
-    100%{background-position:0% 44%}
+  0%{background-position:0% 58%}
+  50%{background-position:100% 43%}
+  100%{background-position:0% 58%}
 }
 
 /* --------------------------------------- EN TÊTE DES PAGES --------------------------------------- */
@@ -32,7 +25,8 @@ header{
   justify-content: space-between;
   width:100%;
   height:110px;
-  background-color:#899bb3;
+  background-color:#ffffff;
+  box-shadow: 0px 0px 10px black;
 }
 
 #link_logo{
@@ -74,13 +68,13 @@ header{
 }
 
 #logo, #logo::after{
-  border: hidden 3px white;
+  border: hidden 3px black;
   transition: border 0.5s ease-out;
 }
 
 #logo:hover{
-  border-left: solid 3px white;
-  border-right: solid 3px white;
+  border-left: solid 3px black;
+  border-right: solid 3px black;
   border-radius: 50%;
 }
 
@@ -88,7 +82,7 @@ header{
   background-color: white;
   content: '';
   position: absolute;
-  z-index: -1;                                 
+  z-index: -1;                           
 }
 
 .nav_button:hover {
@@ -100,7 +94,6 @@ header{
   left: 50%;
   top: 0%;
   width: 0;
-
 }
 
 .nav_button:hover:after {
@@ -111,7 +104,7 @@ header{
 }
 
 .nav_button {
-  border-radius:30px;
+  border-radius:5px;
   margin:10px;
   background-color:#afcae8;
   padding:15px;
@@ -179,6 +172,7 @@ header{
 
 .photo_accueil{
   width:50%;
+  box-shadow: 0px 0px 10px black;
 }
 
 .paragraphe_bouton{
@@ -275,7 +269,6 @@ header{
   font-family:'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  background: #000000;
   color: #fff;
   line-height: 1.5;
   letter-spacing: .5px;
@@ -405,7 +398,7 @@ header{
 
 .cgu_main-titreArticle {
   font-size: 16pt;
-  color: #afcae8;
+  color: black;
   text-decoration: none;
 }
 
