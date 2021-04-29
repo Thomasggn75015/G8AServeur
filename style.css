@@ -1,0 +1,209 @@
+body{margin:0;}
+
+.body_accueil {
+    background: linear-gradient(123deg, #cdcdce, #73a1d5, #d2e7ff);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 36s ease infinite;
+    -moz-animation: AnimationName 36s ease infinite;
+    animation: AnimationName 36s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 44%}
+    50%{background-position:100% 57%}
+    100%{background-position:0% 44%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 44%}
+    50%{background-position:100% 57%}
+    100%{background-position:0% 44%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 44%}
+    50%{background-position:100% 57%}
+    100%{background-position:0% 44%}
+}
+
+/* --------------------------------------- EN TÊTE DES PAGES --------------------------------------- */
+header{
+  display:flex;
+  overflow:hidden;
+  justify-content: space-between;
+  width:100%;
+  height:110px;
+  background-color:#899bb3;
+}
+
+#link_logo{
+  position:relative;
+  left:20px;
+  height:90%;
+  width:auto;
+  margin-left:20px;
+  margin-top:5px;
+}
+#logo{
+  display:flex;
+  justify-content: center;
+  height: 100%;
+  width:auto;
+}
+
+.navbar{
+  display:flex;
+  align-items: center;
+  margin-right:30px;
+}
+
+.navbar ul{ 
+  list-style-type: none;
+}
+
+.navbar li{
+
+  display:inline-block;
+  height:auto;
+}
+
+.nav_button, .nav_button::after {
+  -webkit-transition: left 1s ease-out, width 1s ease-out, color 1s linear;
+  -moz-transition: left 1s ease-out, width 1s ease-out, color 1s linear;
+  -o-transition: left 1s ease-out, width 1s ease-out, color 1s linear;
+  transition: left 1s ease-out, width 1s ease-out, color 1s linear;
+}
+
+#logo, #logo::after{
+  border: hidden 3px white;
+  transition: border 0.5s ease-out;
+}
+
+
+#logo:hover{
+  border-left: solid 3px white;
+  border-right: solid 3px white;
+  border-radius: 50%;
+}
+
+.nav_button::before, .nav_button::after {
+  background-color: white;
+  content: '';
+  position: absolute;
+  z-index: -1;                                 
+}
+
+.nav_button:hover {
+  color: #afcae8;
+}
+
+.nav_button::after {
+  height: 100%;
+  left: 50%;
+  top: 0%;
+  width: 0;
+
+}
+
+.nav_button:hover:after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.nav_button {
+  border-radius:30px;
+  margin:10px;
+  background-color:#afcae8;
+  padding:15px;
+
+  color:black;
+  font-family: Arial, sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+
+  position:relative;
+  display: inline-block;
+  transition: all .3s;
+  overflow: hidden;
+  vertical-align: middle;
+  z-index: 1;
+  }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------- ACCUEIL --------------------------------------- */
+.bloc_accueil {
+  margin-top:auto;
+  margin-left:20px;
+  margin-right: 20px;
+}
+
+.titre_accueil {
+  font-size: 2.2em;
+  font-weight: bold;
+  padding-bottom: 0px;
+  margin-bottom:5px;
+}
+
+.titre_accueil, .sous-titre_accueil{
+  text-align:center;
+  font-family: Arial, sans-serif;
+}
+
+.sous-titre_accueil{
+  font-weight:normal;
+  font-size:2em;
+  margin-top:0px;
+}
+
+.bloc_photo{
+  display:flex;
+  height:500px;
+}
+
+.photo_accueil:nth-child(1){
+  order:2;
+}
+
+.paragraphe_bouton:nth-child(2){
+  order:1;
+}
+
+.photo_accueil{
+  width:50%;
+}
+
+.paragraphe_bouton{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.paragraphe_accueil{
+  text-align: justify;
+  padding:30px;
+  line-height: 30px;
+  font-family: Verdana;
+  font-size:1.6em;
+  margin-bottom:30px;
+}
+
+.nav_button[title="bouton_inscription"]{
+  text-align: center;
+  width:50%;
+  border:solid 3px black;
+}
+
+
+
+/* --------------------------------------------------------------------------------------- */
