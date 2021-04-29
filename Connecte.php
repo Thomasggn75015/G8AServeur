@@ -3,7 +3,7 @@
     <head>
         <title>Infinite Mesure</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style_connecte.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <header>
