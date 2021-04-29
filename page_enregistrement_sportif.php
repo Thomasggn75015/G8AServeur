@@ -137,9 +137,7 @@
                         if(!mysqli_query($conn, $sql)){
                             echo "<h4 class = 'erreur'>Une erreur s'est produite: </h4>".mysqli_error($conn);
                         }
-                        elseif($detect_erreur_enregistrement == 1){
-                            echo
-                        } else{
+                        else{
                             echo 'Felicitation pour votre adhésion !';
                             //header('Location: page_vérification.php');
                         }
