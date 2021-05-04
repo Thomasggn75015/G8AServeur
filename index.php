@@ -21,7 +21,7 @@
 					<p class="paragraphe_accueil">
 						La société Infinite Measures réalise des tests de performance technique afin de vous aider à améliorer vos résultats dans votre sport de prédilection. Utiliser Infinite Measures, c'est s'assurer une progression constante.
 					</p>
-					<a href="page_enregistrement_sportif.php" class="nav_button">Rejoindre le programme</a>
+					<a href="page_enregistrement.php" class="nav_button">Rejoindre le programme</a>
 				</div>
 			</div>
 	</body>

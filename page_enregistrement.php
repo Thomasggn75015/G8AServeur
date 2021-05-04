@@ -4,10 +4,7 @@
         <title>Inscription (sportif)</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
-<<<<<<< HEAD:page_enregistrement_sportif.php
-=======
         <script src = 'script_enregistrement.js'></script>
->>>>>>> devMax:page_enregistrement.php
     </head>
 
     <header>
