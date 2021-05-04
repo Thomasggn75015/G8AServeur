@@ -7,7 +7,7 @@ if ($_SESSION["login"] == null) {
 		<a href="index.php" id="link_logo"><img id="logo" src="Images/Infinite_measures.png"  alt="logo Accueil" /></a>
 		<nav class="navbar">
 			<ul>
-				<li><a href="page_enregistrement_sportif.php" class="nav_button">Inscription</a></li>
+				<li><a href="page_enregistrement.php" class="nav_button">Inscription</a></li>
 				<li><a href="connexion.php" class="nav_button">Connexion</a></li>
 				<li><a href="faq.php" class="nav_button">FAQ</a></li>
 				<li><a href="cgu.php" class="nav_button">CGU</a></li>
