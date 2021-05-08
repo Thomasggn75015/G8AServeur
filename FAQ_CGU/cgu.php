@@ -2,7 +2,7 @@
 <html lang="fr">
 <head> 
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_viviane.css" />
     <title>GCU</title>
 </head>
 
