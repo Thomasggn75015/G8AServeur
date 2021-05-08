@@ -20,13 +20,13 @@
   }
 
   #faq_main {
-    max-width: 750px; /*ça change la largeur FAQ...*/
-    margin: auto;
+    max-width: 450px; /*ça change la largeur FAQ...*/
+    margin-left: 15px;
     padding-bottom: 10px;
   }
 
   .faq_main-question {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 600;
     background-color: #fafafa;
     background-image: linear-gradient(90deg,rgb(151, 188, 230),rgb(179, 128, 255));
@@ -35,13 +35,15 @@
     margin-bottom: 1rem;
     outline: none;
     border-radius: .25rem;
-    text-align: left;
+    text-align: justify;
     cursor: pointer;
     position: relative
   }
 
     .faq_main_reponse {
-      text-align: left
+      position: absolute;
+      margin: -70px 10px 10px 500px;
+      text-align: justify
     }
 
     .faq_main-details [open] .faq_main-question ~ * {
@@ -52,31 +54,31 @@
       0% {opacity: 0; margin-top: -10px}
       100% {opacity: 1; margin-top: 0}
     }
+
+    .faq_main-question {
+      list-style: none
+    }
     
-    .faq_main-details > .faq_main-question::after {
-      position: absolute;
-      content: "+";
-      right: 20px
+    details summary::before { 
+      content:"🡒"; 
     }
 
-    .faq_main-details [open] > .faq_main-question::after {
-      position: absolute;
-      content: "-";
-      right: 20px
+    details[open] summary::before { 
+      content:"🡑"; 
     }
 
-    .faq_main-details > .faq_main-question::-webkit-details-marker {
-      display: none
+    details > summary::-webkit-details-marker {
+      display: none;
     }
 
     .faq_main-details [open] .faq_main-question ~ * {
       animation: sweep .5s ease-in-out;
     }
 
-    @keyframes sweep {
+    *@keyframes sweep {
       0%    {opacity: 0; margin-top: -10px}
-      100%  {opacity: 1; margin-top: 0px}
-    }
+      100%  {opacity: 1; margin-top: 0}
+    
 
 
 /*CGU*/
