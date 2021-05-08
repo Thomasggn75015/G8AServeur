@@ -1,4 +1,4 @@
-/*FAQ*/
+/* --------------------------------------- FAQ ------------------------------------------- */
 #corps_FAQ_CGU {
   margin: 0;
   font-family:'Open Sans', sans-serif;
@@ -8,7 +8,6 @@
   color: #fff;
   line-height: 1.5;
   letter-spacing: .5px;
-  /*text-align:center;*/
 }
 
   #faq_cgu-titrePage {
@@ -20,7 +19,7 @@
   }
 
   #faq_main {
-    max-width: 450px; /*ça change la largeur FAQ...*/
+    max-width: 450px;
     margin-left: 15px;
     padding-bottom: 10px;
   }
@@ -75,13 +74,10 @@
       animation: sweep .5s ease-in-out;
     }
 
-    *@keyframes sweep {
-      0%    {opacity: 0; margin-top: -10px}
-      100%  {opacity: 1; margin-top: 0}
-    
+/* --------------------------------------------------------------------------------------- */    
 
 
-/*CGU*/
+/* --------------------------------------- CGU ------------------------------------------- */
 @media screen and (max-width: 560px) {
   #main_FAQ_CGU
     {
@@ -147,3 +143,4 @@
 .cqu_main li {
   list-style: none;
 }
+/* --------------------------------------------------------------------------------------- */
