@@ -1,0 +1,27 @@
+{
+    "description": "Projet en mvc php",
+    "name": "thomas/mvc_g8a",
+    "authors": [
+        {
+            "name": "Thomas"
+        },
+        {
+            "name": "Ion"
+        },
+        {
+            "name": "Maëlle"
+        },
+        {
+            "name": "Max"
+        },
+        {
+            "name": "Viviane"
+        }
+    ],
+    "autoload":{
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "require": {}
+}
