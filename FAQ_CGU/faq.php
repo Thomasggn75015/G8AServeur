@@ -17,49 +17,89 @@
 
 	  <div id="faq_main">
 
-		  <details class="faq_main-details">
-		    <summary class="faq_main-question">L'inscription aux services proposés par Infinite Measures est-elle gratuite ?</summary>
-		    <div class="faq_main_contenu">
-		      <p class="faq_main_reponse">L'inscription au site est gratuite, mais l'appareil de mesures psychotechniques est payant.</p>
+	  	<div class="faq_main_contenu">
+		    <a href="#hideR1" class="hide faq_main-question" id="hideR1">L'inscription aux services proposés par Infinite Measures est-elle gratuite ?</a>
+		    <a href="#showR1" class="show faq_main-question" id="showR1">L'inscription aux services proposés par Infinite Measures est-elle gratuite ?</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">L'inscription au site est gratuite, mais l'appareil de mesures psychotechniques est payant.</div>
 		    </div>
-		  </details>
+		</div>
 
-		    <details class="faq_main-details">
-		    <summary class="faq_main-question">Est-ce que mes données psychotechniques sont publiques ?</summary>
-		    <div class="faq_main_contenu">
-		      <p class="faq_main_reponse">Non, nous vous assurons que vos données et résultats sont accessibles uniquement par vous et votre coatch.</p>
+		<div class="faq_main_contenu">
+		    <a href="#hideR2" class="hide faq_main-question" id="hideR2">Est-ce que mes données psychotechniques sont publiques ?</a>
+		    <a href="#showR2" class="show faq_main-question" id="showR2">Est-ce que mes données psychotechniques sont publiques ?</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Non, nous vous assurons que vos données et résultats sont accessibles uniquement par vous et votre coatch.</div>
 		    </div>
-		  </details>
+		</div>
 
-		  <details class="faq_main-details">
-		    <summary class="faq_main-question">Question 3</summary>
-		    <div class="faq_main_contenu">
-		      <p class="faq_main_reponse">Réponse 3</p>
+		<div class="faq_main_contenu">
+		    <a href="#hideR3" class="hide faq_main-question" id="hideR3">Question 3</a>
+		    <a href="#showR3" class="show faq_main-question" id="showR3">Question 3</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 3</div>
 		    </div>
-		  </details>
+		</div>
 
-		  <details class="faq_main-details">
-		    <summary class="faq_main-question">Question 4</summary>
-		    <div class="faq_main_contenu">
-		      <p class="faq_main_reponse">Réponse 4</p>
+		<div class="faq_main_contenu">
+		    <a href="#hideR4" class="hide faq_main-question" id="hideR4">Question 4</a>
+		    <a href="#showR4" class="show faq_main-question" id="showR4">Question 4</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 4</div>
 		    </div>
-		  </details>
+		</div>
 
-		  <details class="faq_main-details">
-		    <summary class="faq_main-question">Question 5</summary>
-		    <div class="faq_main_contenu">
-		      <p class="faq_main_reponse">Réponse 5</p>
+		<div class="faq_main_contenu">
+		    <a href="#hideR5" class="hide faq_main-question" id="hideR5">Question 5</a>
+		    <a href="#showR5" class="show faq_main-question" id="showR5">Question 5</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 5</div>
 		    </div>
-		  </details>
+		</div>
 
-		  <details class="faq_main-details">
-		    <summary class="faq_main-question">Question 6</summary>
-		    <div class="faq_main_contenu">
-		      <p class="faq_main_reponse">Réponse 6</p>
+		<div class="faq_main_contenu">
+		    <a href="#hideR6" class="hide faq_main-question" id="hideR6">Question 6</a>
+		    <a href="#showR6" class="show faq_main-question" id="showR6">Question 6</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 6</div>
 		    </div>
-		  </details>
+		</div>
+
+		<div class="faq_main_contenu">
+		    <a href="#hideR7" class="hide faq_main-question" id="hideR7">Question 7</a>
+		    <a href="#showR7" class="show faq_main-question" id="showR7">Question 7</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 7</div>
+		    </div>
+		</div>
+
+		<div class="faq_main_contenu">
+		    <a href="#hideR8" class="hide faq_main-question" id="hideR8">Question 8</a>
+		    <a href="#showR8" class="show faq_main-question" id="showR8">Question 8</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 8</div>
+		    </div>
+		</div>
+
+		<div class="faq_main_contenu">
+		    <a href="#hideR9" class="hide faq_main-question" id="hideR9">Question 9</a>
+		    <a href="#showR9" class="show faq_main-question" id="showR9">Question 9</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 9</div>
+		    </div>
+		</div>
+
+		<div class="faq_main_contenu">
+		    <a href="#hideR10" class="hide faq_main-question" id="hideR10">Question 10</a>
+		    <a href="#showR10" class="show faq_main-question" id="showR10">Question 10</a>
+		    <div class="faq_main-reponse">
+		      <div class="faq_main-reponse-contenu">Réponse 10</div>
+		    </div>
+		</div>
 
 	  </div>
+
+</div>
 
 </div>
 </body>
