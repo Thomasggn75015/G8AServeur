@@ -1,0 +1,27 @@
+{
+    "name": "thomas/mvc_g8a",
+    "description": "Projet Serveur APP",
+    "authors": [
+        {
+            "name": "Thomas"
+        },
+        {
+            "name": "Viviane"
+        },
+        {
+            "name": "Max"
+        },
+        {
+            "name": "Ion"
+        },
+        {
+            "name": "Maëlle"
+        }
+    ],
+    "autoload":{
+        "psr-4": {
+            "App\\":"app"
+        }
+    },
+    "require": {}
+}
