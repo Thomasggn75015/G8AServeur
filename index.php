@@ -3,7 +3,7 @@
 require 'vendor/autoload.php';
 require 'app/database/config.php';
 
-define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'MVC_G8A/app/Views' . DIRECTORY_SEPARATOR);
+define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'G8AServeur/app/Views' . DIRECTORY_SEPARATOR);
 
 $router = new App\Router\Router($_GET['url']);
 
