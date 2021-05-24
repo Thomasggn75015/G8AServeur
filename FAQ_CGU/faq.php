@@ -15,91 +15,116 @@
 	
 	<h1 id="faq_cgu-titrePage">FAQ</h1>
 
-	  <div id="faq_main">
+	<div id="faq_main">
+	<div id="faq_menu">
 
-	  	<div class="faq_main_contenu">
-		    <a href="#hideR1" class="hide faq_main-question" id="hideR1">L'inscription aux services proposés par Infinite Measures est-elle gratuite ?</a>
-		    <a href="#showR1" class="show faq_main-question" id="showR1">L'inscription aux services proposés par Infinite Measures est-elle gratuite ?</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">L'inscription au site est gratuite, mais l'appareil de mesures psychotechniques est payant.</div>
-		    </div>
-		</div>
+		<form action="faq.php" method="post">
+			<div class="faq_menu_contenu">
+				<input class="faq_menu-question" type="submit" name="question1" value="L'inscription aux services proposés par Infinite Measures est-elle gratuite ?" /> 
+				<input class="faq_menu-question" type="submit" name="question2" value="Est-ce que mes données psychotechniques sont publiques ?" /> 
+				<input class="faq_menu-question" type="submit" name="question3" value="Question 3" /> 
+				<input class="faq_menu-question" type="submit" name="question4" value="Question 4" /> 
+				<input class="faq_menu-question" type="submit" name="question5" value="Question 5" /> 
+				<input class="faq_menu-question" type="submit" name="question6" value="Question 6" /> 
+				<input class="faq_menu-question" type="submit" name="question7" value="Question 7" /> 
+				<input class="faq_menu-question" type="submit" name="question8" value="Question 8" /> 
+				<input class="faq_menu-question" type="submit" name="question9" value="Question 9" /> 
+				<input class="faq_menu-question" type="submit" name="question10" value="Question 10" /> 
+			</div>
+		</form>
 
-		<div class="faq_main_contenu">
-		    <a href="#hideR2" class="hide faq_main-question" id="hideR2">Est-ce que mes données psychotechniques sont publiques ?</a>
-		    <a href="#showR2" class="show faq_main-question" id="showR2">Est-ce que mes données psychotechniques sont publiques ?</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Non, nous vous assurons que vos données et résultats sont accessibles uniquement par vous et votre coatch.</div>
-		    </div>
-		</div>
+	</div>
 
-		<div class="faq_main_contenu">
-		    <a href="#hideR3" class="hide faq_main-question" id="hideR3">Question 3</a>
-		    <a href="#showR3" class="show faq_main-question" id="showR3">Question 3</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 3</div>
-		    </div>
-		</div>
+	<?php
+	session_start();
 
-		<div class="faq_main_contenu">
-		    <a href="#hideR4" class="hide faq_main-question" id="hideR4">Question 4</a>
-		    <a href="#showR4" class="show faq_main-question" id="showR4">Question 4</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 4</div>
-		    </div>
-		</div>
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question1'])) {
+			reponse1();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question2'])) {
+			reponse2();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question3'])) {
+			reponse3();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question4'])) {
+			reponse4();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question5'])) {
+			reponse5();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question6'])) {
+			reponse6();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question7'])) {
+			reponse7();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question8'])) {
+			reponse8();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question9'])) {
+			reponse9();
+		}
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['question10'])) {
+			reponse10();
+		}
+	?>
 
-		<div class="faq_main_contenu">
-		    <a href="#hideR5" class="hide faq_main-question" id="hideR5">Question 5</a>
-		    <a href="#showR5" class="show faq_main-question" id="showR5">Question 5</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 5</div>
-		    </div>
-		</div>
+	<?php
+		function reponse1() {
+	?>
+			<p class="faq_main-reponse"> L'inscription au site est gratuite, mais l'appareil de mesures psychotechniques est payant. </p>
+	<?php   }	?>
+	<?php
+		function reponse2() {
+	?>
+			<p class="faq_main-reponse"> Non, nous vous assurons que vos données et résultats sont accessibles uniquement par vous et votre coatch. </p>  
+	<?php   }	?>
+	<?php
+		function reponse3() {
+	?>
+			<p class="faq_main-reponse"> Réponse 3 </p>  
+	<?php   }	?>
+	<?php
+		function reponse4() {
+	?>
+			<p class="faq_main-reponse"> Réponse 4 </p>  
+	<?php   }	?>
+	<?php
+		function reponse5() {
+	?>
+			<p class="faq_main-reponse"> Réponse 5 </p>  
+	<?php   }	?>
+	<?php
+		function reponse6() {
+	?>
+			<p class="faq_main-reponse"> Réponse 6 </p>  
+	<?php   }	?>
+	<?php
+		function reponse7() {
+	?>
+			<p class="faq_main-reponse"> Réponse 7 </p>  
+	<?php   }	?>
+	<?php
+		function reponse8() {
+	?>
+			<p class="faq_main-reponse"> Réponse 8 </p>  
+	<?php   }	?>
+	<?php
+		function reponse9() {
+	?>
+			<p class="faq_main-reponse"> Réponse 9 </p>  
+	<?php   }	?>
+	<?php
+		function reponse10() {
+	?>
+			<p class="faq_main-reponse"> Réponse 10 </p>  
+	<?php   }	?>
 
-		<div class="faq_main_contenu">
-		    <a href="#hideR6" class="hide faq_main-question" id="hideR6">Question 6</a>
-		    <a href="#showR6" class="show faq_main-question" id="showR6">Question 6</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 6</div>
-		    </div>
-		</div>
-
-		<div class="faq_main_contenu">
-		    <a href="#hideR7" class="hide faq_main-question" id="hideR7">Question 7</a>
-		    <a href="#showR7" class="show faq_main-question" id="showR7">Question 7</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 7</div>
-		    </div>
-		</div>
-
-		<div class="faq_main_contenu">
-		    <a href="#hideR8" class="hide faq_main-question" id="hideR8">Question 8</a>
-		    <a href="#showR8" class="show faq_main-question" id="showR8">Question 8</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 8</div>
-		    </div>
-		</div>
-
-		<div class="faq_main_contenu">
-		    <a href="#hideR9" class="hide faq_main-question" id="hideR9">Question 9</a>
-		    <a href="#showR9" class="show faq_main-question" id="showR9">Question 9</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 9</div>
-		    </div>
-		</div>
-
-		<div class="faq_main_contenu">
-		    <a href="#hideR10" class="hide faq_main-question" id="hideR10">Question 10</a>
-		    <a href="#showR10" class="show faq_main-question" id="showR10">Question 10</a>
-		    <div class="faq_main-reponse">
-		      <div class="faq_main-reponse-contenu">Réponse 10</div>
-		    </div>
-		</div>
-
-	  </div>
-
-</div>
+	<?php
+	session_destroy();
+	?>
+	</div>
 
 </div>
 </body>
