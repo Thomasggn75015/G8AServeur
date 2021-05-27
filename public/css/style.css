@@ -1,25 +1,14 @@
 body{
-    margin:0;
-    background: linear-gradient(128deg, #6192f7, #4769d5);
-    background-size: 400% 400%;
-  
-    -webkit-animation: AnimationName 7s ease infinite;
-    animation: AnimationName 7s ease infinite;
-  }
-  
-  @-webkit-keyframes AnimationName {
-    0%{background-position:0% 58%}
-    50%{background-position:100% 43%}
-    100%{background-position:0% 58%}
-  }
-  @keyframes AnimationName { 
-    0%{background-position:0% 58%}
-    50%{background-position:100% 43%}
-    100%{background-position:0% 58%}
+  margin:0;
+  background-image: url(../images/boxe-background.jpg);
+  background-size:100%;
+  background-color: rgba(136, 136, 136, 0.1);
   }
   
   /* --------------------------------------- EN TÊTE DES PAGES --------------------------------------- */
   header{
+    position: sticky;
+    top: 0;
     display:flex;
     overflow:hidden;
     justify-content: space-between;
@@ -130,6 +119,63 @@ body{
   }
   /* --------------------------------------------------------------------------------------- */
   
+  /* --------------------------------------- FOOTER ---------------------------------------- */
+  .footer{
+    position:fixed;
+    bottom:0;
+    display:flex;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+  }
+
+  .footer_contact-message {
+    font-weight: bold;
+    font-size: 2.4em;
+    margin-left:280px;
+    margin-right:280px;
+  }
+
+  .footer_content{
+    display:flex;
+  }
+
+  .social_logos, .footer_nav {
+    list-style-type: none;
+  }
+
+  .social_logos {
+    display:flex;
+    align-items: center;
+  }
+
+  .footer_nav {
+    align-items: center;
+  }
+  .social_logo{
+    height:50px;
+    width:auto;
+  }
+
+  .footer_link {
+    padding:5px;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+
+  .footer_link:hover {
+    color: #afcae8;
+    text-decoration: underline;
+  }
+
+  .footer_copyright {
+    display:flex;
+    font-style: italic;
+  }
+  /* --------------------------------------------------------------------------------------- */
   
   
   /* --------------------------------------- ACCUEIL --------------------------------------- */
