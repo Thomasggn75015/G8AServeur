@@ -1,6 +1,5 @@
 <?php
-    //class InscriptionController extends Controller{
-    class InscriptionController{
+    class InscriptionController extends Controller{
         function verif(){
             require('model\InscriptionModel.php');
             require('view\inscriptionView.php');

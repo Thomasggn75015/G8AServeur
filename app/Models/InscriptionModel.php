@@ -1,25 +1,6 @@
 <?php
-    //class InscriptionModel extends Model{
-    class InscriptionModel{
-        public $servername = "localhost";
-        public $username = "root";
-        public $password = "";
-        public $dbname = "mydb";
-
-        //public $conn = dbConnect();
-        //public $tableAdh = tableCreateVerif();
-
-        function dbConnect(){
-            try{
-                //$conn_try = mysqli_connect($servername, $username, $password, $dbname);
-                $conn_try = mysqli_connect('localhost', 'root', '', 'mydb');
-            }catch(Exception $e){
-                die("Connection failed: " . mysqli_connect_error());
-            }
-            return $conn_try;
-        }
-
-
+    class InscriptionModel extends Model{
+        
         function tableCreateVerif(){
             try{
                 $addTable = "CREATE Table IF NOT EXISTS Adherents(
