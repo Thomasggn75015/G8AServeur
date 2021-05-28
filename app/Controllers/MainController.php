@@ -12,6 +12,9 @@ class MainController extends Controller{
         return $this->view('main.enregistrement');
     }
 
+    public function profil(){
+        return $this->view('main.profil');
+    }
     public function cgu(){
         return $this->view('main.cgu');
     }
