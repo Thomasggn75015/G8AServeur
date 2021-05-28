@@ -11,7 +11,6 @@ class Router{
     private $namedRoutes = [];
 
     public function __construct($url){
-        $this->routeUrl = 'https://g8a.borealforge.net/';
         $this->url = $url;
     }
 
@@ -24,8 +23,7 @@ class Router{
     }
 
     private function add($path, $callable, $name, $method){
-        $rewritePath = $this->$routeUrl + $path;
-        $route = new Route($rewritePath, $callable);
+        $route = new Route($path, $callable);
         $this->routes[$method][] = $route;
         if(is_string($callable) && $name == null){
             $name = $callable;

@@ -6,7 +6,6 @@ require 'app/database/config.php';
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'G8AServeur/app/Views' . DIRECTORY_SEPARATOR);
 
 $router = new App\Router\Router($_GET['url']);
-
 //Redirection depuis l'accueil
 $router->get('/', 'Main#accueil');
 $router->get('/cgu', 'Main#cgu');
@@ -14,7 +13,7 @@ $router->get('/cgu', 'Main#cgu');
 $router->get('/profil', 'User#profil');
 
 $router->get('/enregistrement', 'User#enregistrement');
-//$router->post('/enregistrement', 'Enregistrement#enregistrementPost');
+$router->post('/enregistrement', 'Enregistrement#enregistrementPost');
 
 
 //On passe :slug et :id en paramètres, on appelle le contrôleur Post et sa méthode show, séparateur #
