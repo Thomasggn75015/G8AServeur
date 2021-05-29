@@ -476,3 +476,50 @@ body{
     text-align: center;
   }
   /* --------------------------------------------------------------------------------------- */
+
+  /*----------------------------------Affichage des données--------------------------------- */
+  #titre_results{
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#results{
+    width : 1000px;
+    height : 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#choose_results{
+    width : 500px;
+    height: 500px;
+    background-color: lightblue;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border : 2px solid black;
+}
+.select_test{
+    width : 300px;
+    height : 50px;
+    text-align: center;
+    font-size: 18px;
+    border : 1px solid #7846a1;
+    background-color: #ba78f0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.select_test:hover{
+    box-shadow: 4px 4px 4px #7846a1;
+}
+
+#show_results{
+    width : 500px;
+    height: 500px;
+    background-color: lightblue;
+    border : 2px solid black;
+    border-left: 0px;
+}
