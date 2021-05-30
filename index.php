@@ -11,6 +11,7 @@ $router->get('/', 'Main#accueil');
 $router->get('/cgu', 'Main#cgu');
 
 $router->get('/profil', 'User#profil');
+$router->get('/connexion', 'User#connect');
 
 $router->get('/enregistrement', 'User#enregistrement');
 $router->post('/enregistrement', 'Enregistrement#enregistrementPost');
