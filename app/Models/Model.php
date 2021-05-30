@@ -34,7 +34,8 @@ abstract class Model{
             || strpos($sql, "DELETE") === 0)
         {
             $stmt = $this->db->getPDO()->$method($sql);
-            return $stmt->execute($param);
+            
+            $stmt->execute($param);
         }
 
         // fetchAll renvoie plusieurs lignes alors que fetch renvoie une seule ligne

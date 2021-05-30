@@ -1,8 +1,8 @@
 <div class="bloc-profil">
         <form class="form-recherche" method="POST" action="/profil">
-            <label for="critere-select">Selon quel critère souhaitez-vous rechercher un utilisateur ?</label>
+            <label for="critereSelect">Selon quel critère souhaitez-vous rechercher un utilisateur ?</label>
             <br/>
-            <select name="critere-select" id="critere-select">
+            <select name="critereSelect" id="critereSelect">
                 <option value="pseudo">Nom d'utilisateur</option>
                 <option value="email">Mail</option>
                 <option value="coachname">Nom du coach</option>

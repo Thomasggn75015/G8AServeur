@@ -5,19 +5,12 @@ namespace App\Models;
 class User extends Model{
     protected $table = "Adherents";
 
-    public function sortCritere($critereSelect){
-        $selectChamps = array("id, user_role, firstname, lastname, coachname, pseudo, email, birthdate");
-        unset($selectChamps["$critereSelect"]);
-        return $selectChamps;
-    }
 
     public function findByCritere($critereSelect, $searchEntry){
-        $this->sortCritere($critereSelect);
-        return $this->query("SELECT $critereSelect FROM {$this->table} WHERE $critereSelect= ?", [$critereSelect]);
+        return $this->query("SELECT id, user_role, firstname, lastname, coachname, pseudo, email, birthdate FROM {$this->table} WHERE $critereSelect= ?", [$searchEntry]);
     }
 
     public function findUserByCritere($critereSelect, $searchEntry){
-        $this->sortCritere($critereSelect);
-        return $this->query("SELECT $critereSelect FROM {$this->table} WHERE $criteSelect=? AND user_role = 'sportif'", [$searchEntry]);
+        return $this->query("SELECT id, user_role, firstname, lastname, coachname, pseudo, email, birthdate FROM {$this->table} WHERE $critereSelect=? AND user_role = 'sportif'", [$searchEntry]);
     }
 }
