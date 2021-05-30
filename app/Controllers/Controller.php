@@ -50,7 +50,6 @@ abstract class Controller{
      * Permet de protéger des fonctions qui ne peuvent être exécutées que par un admin
      */
     protected function isAdmin(){
-        return true;
         if(isset($_SESSION['user_id'])){
             if($user->id_role == "admin"){
                 return true;
@@ -62,7 +61,6 @@ abstract class Controller{
     }
 
     protected function isNotSportsman(){
-        return true;
         if(isset($_SESSION['user_id'])){
             if($user->id_role == "admin" || $user->id_role == "coach" ){
                 return true;
