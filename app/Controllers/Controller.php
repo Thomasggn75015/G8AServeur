@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Controllers\Controller;
 use App\Database\DBConnection;
 
 /**
@@ -36,12 +37,12 @@ abstract class Controller{
     }
 
     public function setCurrentSession($id_user, $id_role){
-        $_SESSION['athl_user_id']   = $id_user;
-        $_SESSION['athl_user_role'] = $id_role;
+        $_SESSION['user_id']   = $id_user;
+        $_SESSION['user_role'] = $id_role;
     }
 
     public function isLoggedIn(){
-        return isset($_SESSION['athl_user_id'])? true : header('Location: /login');
+        return isset($_SESSION['user_id'])? true : header('Location: /login');
     }
 
     /**
@@ -49,23 +50,25 @@ abstract class Controller{
      * Permet de protéger des fonctions qui ne peuvent être exécutées que par un admin
      */
     protected function isAdmin(){
-        if(isset($_SESSION['athl_user_id'])){
-            $user = (new User($this->getDB()))->findById($_SESSION['athl_user_id']);
-            if($user->id_role === "1"){
+        if(isset($_SESSION['user_id'])){
+            if($user->id_role == "admin"){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        $this->destroySession();
     }
 
-    protected function isNotAthlete(){
-        if(isset($_SESSION['athl_user_id'])){
-            $user = (new User($this->getDB()))->findById($_SESSION['athl_user_id']);
-            if($user->id_role === "1" || $user->id_role == "2" ){
+    protected function isNotSportsman(){
+        if(isset($_SESSION['user_id'])){
+            if($user->id_role == "admin" || $user->id_role == "coach" ){
                 return true;
             }
+            else{ 
+                return false; 
+            }
         }
-        $this->destroySession();
     }
 
     public function destroySession(){

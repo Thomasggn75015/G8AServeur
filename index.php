@@ -10,7 +10,10 @@ $router = new App\Router\Router($_GET['url']);
 $router->get('/', 'Main#accueil');
 $router->get('/cgu', 'Main#cgu');
 
-$router->get('/profil', 'User#profil');
+$router->get('/profil', 'Search#profil');
+$router->post('/profil', 'Search#profilPost');
+
+$router->get('/connexion', 'User#connect');
 
 $router->get('/enregistrement', 'User#enregistrement');
 $router->post('/enregistrement', 'Enregistrement#enregistrementPost');

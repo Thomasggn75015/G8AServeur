@@ -1,8 +1,6 @@
 body{
   margin:0;
-  background-image: url(../images/boxe-background.jpg);
-  background-size:100%;
-  background-color: rgba(136, 136, 136, 0.1);
+  background-color: white;
   }
   
   /* --------------------------------------- EN TÊTE DES PAGES --------------------------------------- */
@@ -10,11 +8,10 @@ body{
     position: sticky;
     top: 0;
     display:flex;
-    overflow:hidden;
     justify-content: space-between;
     width:100%;
-    height:110px;
-    background-color:#ffffff;
+    height:80px;
+    background-color: #afcae8;
     box-shadow: 0px 0px 10px black;
   }
   
@@ -45,15 +42,17 @@ body{
   }
   
   .navbar li{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     display:inline-block;
     height:auto;
   }
   
   .nav_button, .nav_button::after {
-    -webkit-transition: left 1s ease-out, width 1s ease-out, color 1s linear;
-    -moz-transition: left 1s ease-out, width 1s ease-out, color 1s linear;
-    -o-transition: left 1s ease-out, width 1s ease-out, color 1s linear;
-    transition: left 1s ease-out, width 1s ease-out, color 1s linear;
+    -webkit-transition: left 0.8s ease-out, width 0.8s ease-out, color 1s ease-in;
+    -moz-transition: left 0.8s ease-out, width 0.8s ease-out, color 1s ease-in;
+    -o-transition: left 0.8s ease-out, width 0.8s ease-out, color 1s ease-in;
+    transition: left 0.8s ease-out, width 0.8s ease-out, color 1s ease-in;
   }
   
   #logo, #logo::after{
@@ -75,7 +74,8 @@ body{
   }
   
   .nav_button:hover {
-    color: #afcae8;
+    color: black;
+    transition: left 1s ease-out, width 0.8s ease-out, color 1s ease-in;
   }
   
   .nav_button::after {
@@ -95,18 +95,20 @@ body{
   .nav_button {
     border-radius:5px;
     margin:10px;
-    background-color:#afcae8;
-    padding:15px;
+    margin-right:0px;
+    /*background-color:rgba(82, 82, 82, 0.452);*/
+    background-color: #afcae8;
+    padding:10px;
   
     color:black;
     font-family: Arial, sans-serif;
-    font-size: 1.5em;
-    letter-spacing: 1.2px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
     text-decoration: none;
   
     position:relative;
     display: inline-block;
-    transition: all .3s;
+    transition: all 1s;
     overflow: hidden;
     vertical-align: middle;
     z-index: 1;
@@ -121,24 +123,18 @@ body{
   
   /* --------------------------------------- FOOTER ---------------------------------------- */
   .footer{
-    position:fixed;
-    bottom:0;
+    position:absolute;
     display:flex;
+    background-color: #afcae8;
+    justify-content: space-between;
+    align-items:center;
+    height:80px;
     width:100%;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
   }
 
   .footer_contact-message {
     font-weight: bold;
-    font-size: 2.4em;
-    margin-left:280px;
-    margin-right:280px;
-  }
-
-  .footer_content{
-    display:flex;
+    font-size: 1.4em;
   }
 
   .social_logos, .footer_nav {
@@ -160,14 +156,14 @@ body{
 
   .footer_link {
     padding:5px;
-    font-size: 1.8em;
+    font-size: 1em;
     font-weight: bold;
     text-decoration: none;
     color: black;
   }
 
   .footer_link:hover {
-    color: #afcae8;
+    color: white;
     text-decoration: underline;
   }
 
@@ -180,16 +176,17 @@ body{
   
   /* --------------------------------------- ACCUEIL --------------------------------------- */
   .bloc_accueil {
-    margin-top:auto;
-    margin-left:20px;
-    margin-right: 20px;
+    margin-top:-25px;
+    padding-top:20px;
+    height: 800px;
+    background-image: url(../images/boxe-background.jpg);
+    background-size:100%;
+    background-color: rgba(136, 136, 136, 0.1);
   }
   
   .titre_accueil {
     font-size: 2.2em;
     font-weight: bold;
-    padding-bottom: 0px;
-    margin-bottom:5px;
   }
   
   .titre_accueil, .sous-titre_accueil{
@@ -206,14 +203,6 @@ body{
   .bloc_photo{
     display:flex;
     height:500px;
-  }
-  
-  .photo_accueil:nth-child(1){
-    order:2;
-  }
-  
-  .paragraphe_bouton:nth-child(2){
-    order:1;
   }
   
   .photo_accueil{
