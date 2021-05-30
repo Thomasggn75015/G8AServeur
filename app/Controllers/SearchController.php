@@ -11,15 +11,15 @@ class SearchController extends Controller{
         return $this->view('main.profil');
     }
 
-    public function profilPost(){
+    public function profilPost(){ //La variable $_POST est bonne mais la requête fonctionne pas
         if($this->isNotSportsman()){
             if($this->isAdmin()){
                 $searchRequest = (new User($this->getDB()))->findByCritere($_POST['critere-select'], htmlspecialchars($_POST['searchEntry'])); //Pour les administrateurs qui font une recherche
-                return $searchRequest;
+                return $searchRequest; //Ça récupère rien 
             }
             else{
                 $searchRequest = (new User($this->getDB()))->findUserByCritere($_POST['critere-select'], htmlspecialchars($_POST['searchEntry'])); //Pour les coachs qui cherchent leurs utilisateurs
-                return $searchRequest;
+                return $searchRequest; //Ça récupère rien 
             }
         }
         return $this->profil();
