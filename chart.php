@@ -9,13 +9,13 @@
         <h1>Coucou ça marche de dingo</h1>
         <?php 
         try{
-            $connexion = new PDO('localhost', 'Percutech', 'Boxe_BDD_G8A', 'percutech');
+            $connexion = new PDO('localhost', 'root', '', 'mydb');
             }
             // Catch error
             catch(Exception $e){
                 die("Connection failed: " . $e->getMessage());
             }
-            $result_tests = $connexion->prepare('SELECT ID, Heart_rate, Temperature, Reaction_time FROM Test WHERE user_id = ?');
+            $result_tests = $connexion->prepare('SELECT id_test, frequence_cardiaque, temperature, lumiere_inattendue FROM resultat_test WHERE user_id = ?');
             $result_tests->execute($_SESSION['user_id']);
         ?>
         <div>
