@@ -1,9 +1,10 @@
 <?php
+
+    namespace App\Models;
+
     class ResultatModel extends Model{
         function result_requete($test, $pseudo){
-            //================A virer lors de l'integration=================
             $conn = mysqli_connect('localhost', 'root', '', 'percutech');
-            //==============================================================
             $sql = "SELECT ".$test.", DATE_FORMAT(date, '%d-%m %h:%i') FROM `test` JOIN adherents ON test.user_id = adherents.id WHERE pseudo LIKE '".$pseudo."'";
             $result = mysqli_query($conn, $sql);
             return $result;

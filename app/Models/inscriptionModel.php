@@ -1,4 +1,7 @@
 <?php
+
+    namespace App\Models;
+
     class InscriptionModel extends Model{
         
         function tableCreateVerif(){

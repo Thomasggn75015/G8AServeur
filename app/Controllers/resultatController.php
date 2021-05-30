@@ -1,4 +1,7 @@
 <?php
+
+    namespace App\Controllers;
+    
     class ResultatController{
         function role_base_display($role, $pseudo){
             if($role == "COACH"){
