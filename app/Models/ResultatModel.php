@@ -1,5 +1,5 @@
 <?php
-    class ResultatModel{
+    class ResultatModel extends Model{
         function result_requete($test, $pseudo){
             //================A virer lors de l'integration=================
             $conn = mysqli_connect('localhost', 'root', '', 'percutech');
