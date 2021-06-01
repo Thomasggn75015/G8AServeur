@@ -43,4 +43,9 @@ class User extends Model{
             $this->query("UPDATE {$this->table} SET pseudo='?', mdp='?', email='?' WHERE id=?", [$modifProfil]);
         }*/
     }
+    
+    public function setInformationInscription($signinInfo){
+        $sql_setInfoInsc = "INSERT INTO {$this->table} SET firstname = '".$signinInfo[0]."', lastname = '".$$signinInfo[1]."', coach = '".$$signinInfo[2]."', pseudo = '".$$signinInfo[3]."', mdp = '".md5($$signinInfo[4])."', email = '".$$signinInfo[5]."', bithdate = '".$$signinInfo[6]."', role_user = '".$$signinInfo[7]."'";
+        return $this->query($sql_setInfoInsc);
+    }
 }

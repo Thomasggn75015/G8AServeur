@@ -1,10 +1,8 @@
 <!DOCTYPE HTML>
 <html>
-    <?php ob_start();?>
-
     <div id='contact'>
         <h1 id = "titre_contact">Nous contacter</h1>
-        <form class = 'form_contact' NAME = "form_contact" ACTION = "indexInscription.php" METHOD = "POST">
+        <form class = 'form_contact' NAME = "form_contact" ACTION = "/index" METHOD = "POST">
             <div id='indic_prenom' class="champ_contact">
                 <label for = 'prenom'>VOTRE PRENOM :</label></br>
                 <INPUT class = "input_contact" TYPE = 'TEXT', id = 'prenom', name = 'prenom' placeholder = 'Prénom' required minlength="2"></br>
@@ -28,8 +26,4 @@
             <INPUT class = "boutonValider_contact" TYPE = 'SUBMIT', VALUE = 'ENVOYER  >'><br>
         </form>
     </div>
-
-    <?php $content = ob_get_clean(); ?>
-    <?php require('template.php'); ?>
-
 </html>

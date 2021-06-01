@@ -1,10 +1,14 @@
 <?php
 
     namespace App\Controllers;
-    class MailController{
-        function verif(){
-            require('view/envoieMail.php');
 
+    class MailController extends Controller{
+        
+        public function contact(){
+            return $this->view('main.mail');
+        }
+        
+        public function verif(){
             if(isset($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['sujet'], $_POST['message'])){
                 $detection_erreur_enregistrement = 0;
                 $detail_erreur_enregistrement = "";
@@ -51,6 +55,4 @@
             }
         }
     }
-    $mail = new MailController();
-    $mail->verif();
 ?>

@@ -54,8 +54,8 @@
                     $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
                 }
                 else{
-                    $modelInscription->setInformationInscription($conn, $_POST['prenom'], $_POST['nom'], $_POST['store_coach'], $_POST['pseudo'], md5($_POST['pswd']), $_POST['email'], $_POST['datedenaissance'], $_POST['role_user']);
-                    header('Location: /');
+                    $signinInfo = array($_POST['prenom'], $_POST['nom'], $_POST['store_coach'], $_POST['pseudo'], md5($_POST['pswd']), $_POST['email'], $_POST['datedenaissance'], $_POST['role_user']);
+                    (new User($this->getDB()))->setInformationInscription($signinInfo);
                 }
 
                 if($detection_erreur_enregistrement == 1){

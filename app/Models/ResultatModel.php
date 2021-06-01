@@ -3,14 +3,15 @@
     namespace App\Models;
 
     class ResultatModel extends Model{
-        function result_requete($test, $pseudo){
-            $conn = mysqli_connect('localhost', 'root', '', 'percutech');
-            $sql = "SELECT ".$test.", DATE_FORMAT(date, '%d-%m %h:%i') FROM `test` JOIN adherents ON test.user_id = adherents.id WHERE pseudo LIKE '".$pseudo."'";
-            $result = mysqli_query($conn, $sql);
-            return $result;
-        }
+        protected $table = 'test';
 
-        function get_data($test, $result){
+        public function getData($test, $id_user){
+            $user_id = $_SESSION['user_id'];
+            $sql_resultat = "SELECT ".$test.", DATE_FORMAT(date, '%d-%m %h:%i') FROM {$this->$table} JOIN adherents ON test.user_id = adherents.id WHERE id LIKE '".$id_user."'";
+            $result = $this->query($sql_resultat);
+
+
+
             if($test == 'rythm_memorization'){
                 $data_true = '';
                 $data_false = '';
