@@ -1,5 +1,8 @@
 <?php
-    class ConnexionController
+
+    namespace App\Controllers;
+
+    class ConnexionController extends Controller
     {
         function verifConnection()
         {
@@ -26,10 +29,15 @@
 
                 if($erreur == 1)
                 {
-                    echo "<h4 class = 'detail erreur'>$detail_erreur</h4>";
+                    echo "<h4 class = 'detail_erreur'>$detail_erreur</h4>";
                 }
             }
 
+        }
+
+        function connect()
+        {
+            return $this->view('main.connexion');
         }
     }
 ?>
