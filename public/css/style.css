@@ -385,7 +385,7 @@ body{
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 800px;
+      max-width: 70px;
       }
     .cgu_menu{
       display: none;
@@ -394,17 +394,14 @@ body{
   
   #cgu_corps_wrapper {
     display: inline-flex;
+    color: black;
   }
   
   .cgu_menu {
-    /*float: left;*/
     display: inline-block;
-    width: 500px;
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    border-right: 3px ridge #afcae8;
+    width: 800px;
+    padding: 10px 2px 10px 2px;
+    border-right: 5px ridge #afcae8;
     margin-top: 0;
   }
   
@@ -415,7 +412,7 @@ body{
   }
   
   .cgu_menu a {
-    color: white;
+    color: #000;
     text-transform: uppercase;
     font-size: 8pt;
     text-decoration: none;
@@ -425,15 +422,15 @@ body{
     text-decoration: underline;
   }
   
-  #cgu_menu-titreArticle {
-    margin-left: 20px;
+  .cgu_menu-titreArticle {
     font-size: 12pt;
+    color: #000;
     list-style: none;
   }
   
   .cgu_main-titreArticle {
     font-size: 16pt;
-    color: black;
+    color: #004696;
     text-decoration: none;
   }
   
@@ -444,6 +441,7 @@ body{
   .cqu_main li {
     list-style: none;
   }
+  
   /* --------------------------------------------------------------------------------------- */
   
  
@@ -567,16 +565,18 @@ body{
 .bloc-profil{
   display: flex;
   justify-content: space-between;
-  height: 800px;
+  height: 600px;
 }
+
 #recherche_utilisateur{
-  margin-right: 10%;
+  margin-right: 4%;
   margin-top: 8%;
   text-align: center;
 }
+
 .profil_form-bloc{
-  width: 30%;
-  height: 40%;
+  width: 26%;
+  height: 55%;
   padding: 1%;
   padding-left: 3%;
   margin-top: 10%;
@@ -588,3 +588,19 @@ body{
 h1{
   text-align: center;
 }
+
+.tableau_resultats-recherche, td, th{
+  border: 1px solid black;
+}
+
+.tableau_resultats-recherche{
+  border-collapse: collapse;
+}
+
+th{
+  background-color: #afcae8;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}

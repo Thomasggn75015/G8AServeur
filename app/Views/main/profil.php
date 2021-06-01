@@ -1,13 +1,13 @@
+<?php 
+    if(isset($params) && count($params) < 1){
+        echo("
+            <h4 class=message-systeme>" . $params["systeme"] . "</h4>
+        ");
+    }
+?>
 <div class="bloc-profil">
     <div class="profil_form-bloc">
             <h1>Modification du profil</h1>
-            <?php 
-            if(isset($params)){
-                echo("
-                    <h4 class=message-systeme>" . $params[0] . "</h4>
-                ");
-            }
-            ?>
             <form class="profil_form-modif" method="PUT" action="/profil">
                     <div class="profil_bloc-pseudonyme">
                         <h4 class="user-field"><?php echo 'Pseudonyme actuel : ' . $_SESSION["user_pseudo"]?></h4>
@@ -43,13 +43,16 @@
                 <label class="label-recherche"><h5>Entrer les critères de recherche d\'utilisateur</h5></label>
                 <input type="text" name="searchEntry" placeholder="ex. Jean"/>
                 <br/>
+                <br/>
                 <button type="submit">Rechercher</button>
+                <br/>
+                <br/>
             </form>
             ');
         }
         if(isset($params)){
             echo ('
-                    <table class="tableau_resultats-recherche>
+                    <table class="tableau_resultats-recherche">
                     <colgroup span="7" class="columns"></colgroup>
                         <tr>
                             <th>Role</th>
