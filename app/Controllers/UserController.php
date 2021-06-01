@@ -1,16 +1,13 @@
 <?php
 
     namespace App\Controllers;
-
-    class InscriptionController extends Controller{
+    use App\Models\User;
+    class UserController extends Controller{
         function enregistrement(){
             return $this->view('main.enregistrement');
         }
 
         function verif(){
-            require('model\InscriptionModel.php');
-            require('view\inscriptionView.php');
-
             if(isset($_POST['prenom'], $_POST['nom'], $_POST['store_coach'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'], $_POST['datedenaissance'], $_POST['role_user'])){
                 $detection_erreur_enregistrement = 0;
                 $detail_erreur_enregistrement = "";
@@ -64,6 +61,4 @@
             }
         }
     }
-    $inscription = new InscriptionController();
-    $inscription->verif();
 ?>

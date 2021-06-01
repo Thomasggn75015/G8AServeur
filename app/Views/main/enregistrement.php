@@ -1,7 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-    <?php ob_start();?>
-
     <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</h1>
     <form class = 'form' NAME = "form" ACTION = "indexInscription.php" METHOD = "POST">
         <section id='section_prenom'>
@@ -61,9 +57,3 @@
             <p class = 'interligneValider_enregistrement'></p>
             <p>Vous possédez déjà un compte ? <a href = "connexion.php">Identifiez-vous</a></p>
     </form>
-
-    <?php $content = ob_get_clean(); ?>
-
-    <?php require('template.php'); ?>
-
-</html>
