@@ -12,6 +12,7 @@ $router->get('/cgu', 'Main#cgu');
 
 $router->get('/profil', 'Search#profil');
 $router->post('/profil', 'Search#profilPost');
+$router->post('/profil/modifProfil', 'Search#validerModifProfil');
 
 $router->get('/connexion', 'User#connect');
 

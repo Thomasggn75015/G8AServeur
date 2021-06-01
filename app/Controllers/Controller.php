@@ -36,8 +36,8 @@ abstract class Controller{
         return $this->db;
     }
 
-    public function setCurrentSession($id_user, $user_role){
-        $_SESSION['user_id']   = $id_user;
+    public function setCurrentSession($user_id, $user_role){
+        $_SESSION['user_id']   = $user_id;
         $_SESSION['user_role'] = $user_role;
     }
 
@@ -51,7 +51,7 @@ abstract class Controller{
      */
     protected function isAdmin(){
         if(isset($_SESSION['user_id'])){
-            if($user->id_role == "admin"){
+            if($user->user_role == "admin"){
                 return true;
             }
             else{
@@ -62,7 +62,7 @@ abstract class Controller{
 
     protected function isNotSportsman(){
         if(isset($_SESSION['user_id'])){
-            if($user->id_role == "admin" || $user->id_role == "coach" ){
+            if($user->user_role == "admin" || $user->user_role == "coach" ){
                 return true;
             }
             else{ 
