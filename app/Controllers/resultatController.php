@@ -5,9 +5,8 @@
     use App\Models\ResultatModel;
     
     class ResultatController extends Controller{
-
-        public function resultats($resultats){
-            return $this->view('main.resultats_graphiques', $resultats);
+        public function resultats(array $params){
+            return $this->view('main.resultats_graphiques', $params);
         }
         
         public function affichage_sportif(){
@@ -26,15 +25,14 @@
 
             $test = 'Sound_recognition';
             $data_recson = (new ResultatModel($this->getDB()))->getData($test, $id_user);
-
-            $resultats = [
+            
+            $resultats = array(
                 "data_lumina" => $data_lumina,
                 "data_rythme" => $data_rythme,
                 "data_frecar" => $data_frecar,
                 "data_temper" => $data_temper,
                 "data_recson" => $data_recson
-            ];
-
+            );
             return $this->resultats($resultats);
         }
     }

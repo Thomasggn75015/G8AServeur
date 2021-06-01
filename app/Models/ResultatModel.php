@@ -11,7 +11,7 @@
             $result = $this->query($sql_resultat);
 
 
-            if($test == 'rythm_memorization'){
+            if($test == 'Rythm_memorization'){
                 $data_true = '';
                 $data_false = '';
                 $true = 0;
