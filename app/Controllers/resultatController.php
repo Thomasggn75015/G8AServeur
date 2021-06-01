@@ -4,8 +4,6 @@
 
     use App\Models\ResultatModel;
     
-    use App\Models\ResultatModel;
-
     class ResultatController extends Controller{
         public function resultats(){
             return $this->view('main.profil');
