@@ -26,12 +26,12 @@
     			var myChart = new Chart(ctx, {
         		type: 'line',
 		        data: {
-		            //labels: [...Array(<?php echo $data_lumina[1];?>).keys()],
-                    labels : [<?php echo $data_lumina[1];?>],
+		            //labels: [...Array(<?php echo $resultat['data_lumina'][1];?>).keys()],
+                    labels : [<?php echo $resultat['data_lumina'][1];?>],
 		            datasets: 
 		            [{
 		                label: 'temps de reaction(en s)',
-		                data: [<?php echo $data_lumina[0]; ?>],
+		                data: [<?php echo $resultat['data_lumina'][0]; ?>],
 		                backgroundColor: 'transparent',
 		                borderColor:'rgba(255,99,132)',
 		                borderWidth: 3
@@ -51,11 +51,11 @@
     			var myChart = new Chart(ctx, {
         		type: 'line',
 		        data: {
-		            labels: [<?php echo $data_frecar[1];?>],
+		            labels: [<?php echo $resultat['data_frecar'][1];?>],
 		            datasets: 
 		            [{
 		                label: 'fréquence cardiaque(en bpm)',
-		                data: [<?php echo $data_frecar[0]; ?>],
+		                data: [<?php echo $resultat['data_frecar'][0]; ?>],
 		                backgroundColor: '#afcae8',
 		                borderColor:'rgba(255,99,132)',
 		                borderWidth: 3
@@ -78,7 +78,7 @@
                     
                     datasets: [{
                         label: 'test_reussi',
-                        data: [<?php echo $data_rythme[0]; ?>],
+                        data: [<?php echo $resultat['data_rythme'][0]; ?>],
                         backgroundColor: [
                             'rgba(0, 255, 0, 0.3)',
                         ],
@@ -88,7 +88,7 @@
                         borderWidth: 1
                     },{
                         label: 'test rate',
-                        data: [<?php echo $data_rythme[1]; ?>],
+                        data: [<?php echo $resultat['data_rythme'][1]; ?>],
                         backgroundColor: [
                             'rgba(255, 0, 0, 0.3)',
                         ],
@@ -117,11 +117,11 @@
     			var myChart = new Chart(ctx, {
         		type: 'line',
 		        data: {
-		            labels: [<?php echo $data_temper[1];?>],
+		            labels: [<?php echo $resultat['data_temper'][1];?>],
 		            datasets: 
 		            [{
 		                label: 'température(en°C)',
-		                data: [<?php echo $data_temper[0]; ?>],
+		                data: [<?php echo $resultat['data_temper'][0]; ?>],
 		                backgroundColor: 'transparent',
 		                borderColor:'rgba(255,99,132)',
 		                borderWidth: 3
@@ -141,7 +141,7 @@
     			var myChart = new Chart(ctx, {
         		type: 'line',
 		        data: {
-		            labels: [<?php echo $data_recson[1];?>],
+		            labels: [<?php echo $resultat['data_recson'][1];?>],
 		            datasets: 
 		            [{
 		                label: 'score sur 10',
