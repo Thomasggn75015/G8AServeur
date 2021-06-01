@@ -60,7 +60,7 @@
                 ");
             }
             ?>
-            <form class="profil_form-modif" method="post" action="/profil">
+            <form class="profil_form-modif" method="PUT" action="/profil">
                     <div class="profil_bloc-pseudonyme">
                         <h4 class="user-field"><?php echo 'Pseudonyme actuel : ' . $_SESSION["user_pseudo"]?></h4>
                         <label for="pseudo">Changer le pseudonyme :</label>

@@ -10,10 +10,10 @@ $router = new App\Router\Router($_GET['url']);
 $router->get('/', 'Main#accueil');
 $router->get('/cgu', 'Main#cgu');
 
-
+$router->get('/faq', 'Faq#displayContent');
 $router->get('/profil', 'Search#profil');
-//$router->post('/profil', 'Search#profilPost');
-$router->post('/profil', 'Search#validerModifProfil');
+$router->post('/profil', 'Search#profilPost');
+$router->put('/profil', 'Search#validerModifProfil');
 
 $router->get('/connexion', 'Connexion#connect');
 $router->post('/connexion', 'Connexion#verifConnect');

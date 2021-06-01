@@ -16,7 +16,7 @@ class SearchController extends Controller{
         return $this->view('main.profil', $params);
     }
 
-    public function profilPost(){ //La variable $_POST est bonne mais la requête fonctionne pas
+    public function profilPost(){
         if($this->isNotSportsman()){
             if($this->isAdmin()){
                 $searchRequest = (new User($this->getDB()))->findByCritere($_POST['critereSelect'], htmlspecialchars($_POST['searchEntry'])); //Pour les administrateurs qui font une recherche
@@ -62,7 +62,18 @@ class SearchController extends Controller{
 
             else{
                 $modifProfil = array("pseudo" => $this->modifPseudo, "mdp" => $this->modifMdp, "mail" => $this->modifMail, "id" => $_SESSION["user_id"]);
-                (new User($this->getDB()))->postModifProfil($modifProfil);
+                if($modifProfil["mdp"] != null){
+                    (new User($this->getDB()))->postMdpModif($modifProfil["mdp"]);
+                }
+
+                if($modifProfil["pseudo"] != null){
+                    (new User($this->getDB()))->postPseudoModif($modifProfil["pseudo"]);
+                }
+
+                if($modifProfil["mail"] != null){
+                    (new User($this->getDB()))->postMailModif($modifProfil["mail"]);
+                }
+                (new User($this->getDB()))->postModifProfil();
                 $succes = array("Informations modifiées avec succès");
                 return $this->profil($succes);
             }

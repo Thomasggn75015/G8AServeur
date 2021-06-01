@@ -53,6 +53,12 @@ abstract class Model{
     
     }
 
+   /* public function update(string $param = null){
+        $pdo = $this->db->getPDO();
+        $pdo->prepare("UPDATE Adherents SET pseudo='?' WHERE id=2);
+        return $result->execute($param);
+    }*/
+    
     /**
      * Fonction permettant de retourner tous les tuples de la table du modèle courant
      */
