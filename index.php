@@ -23,6 +23,9 @@ $router->post('/enregistrement', 'User#verif');
 $router->get('/mail', 'Mail#contact');
 $router->post('/mail', 'Mail#verif');
 
+$router->post('/resultats_graphiques', 'Resultat#affichage_sportif');
+$router->post('/resultats_graphiques', 'Resultat#resultats');
+
 //On passe :slug et :id en paramètres, on appelle le contrôleur Post et sa méthode show, séparateur #
 $router->get('/posts/:slug-:id', "Post#show")->with('id', '[0-9]+')->with('slug', '[a-z\-0-9]+');
 
