@@ -1,4 +1,7 @@
 <?php
+
+    namespace App\Controllers;
+
     class InscriptionController extends Controller{
         function verif(){
             require('model\InscriptionModel.php');
