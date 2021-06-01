@@ -11,8 +11,8 @@ class DBConnection extends PDO {
     public function __construct(){
         $dsn = "mysql:dbname=".DB_NAME.";host=".DB_HOST;
         $options = [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, //Voir les erreurs en exeptions
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, //Utiliser des objets au lieu de tableau classique
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, //Voir les erreurs en exceptions
+                //PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, //Utiliser des objets au lieu de tableau classique
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET CHARACTER SET UTF8' //pour éviter les erreurs d'encodage lors de la récupération des données
         ];
         $this->pdo = parent::__construct($dsn, DB_USERNAME, DB_PASSWORD, $options);
@@ -22,3 +22,5 @@ class DBConnection extends PDO {
             return $this->pdo ?? (new DBConnection());
     }
 }
+
+/*$this->pdo = new PDO('mysql:host=DB_HOST; dbname=DB_NAME', 'DB_USERNAME', 'DB_PASSWORD');*/

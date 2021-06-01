@@ -22,7 +22,7 @@ if(isset($_SESSION['user_role'])){
             <?php 
                 if(isset($_SESSION['user_id'])){
             ?> 
-                    <a href="index.php" id="link_logo"><img id="logo" src="public/images/Infinite_measures.png"  alt="logo Accueil" /></a>
+                    <a href="/" id="link_logo"><img id="logo" src="public/images/Infinite_measures.png"  alt="logo Accueil" /></a>
                     <nav class="navbar">
                         <ul>
                             <li><a href="/profil" class="nav_button">Profil</a></li>
@@ -33,7 +33,7 @@ if(isset($_SESSION['user_role'])){
                 <?php
                     } else {
                 ?>
-                    <a href="index.php" id="link_logo"><img id="logo" src="public/images/Infinite_measures.png"  alt="logo Accueil" /></a>
+                    <a href="/" id="link_logo"><img id="logo" src="public/images/Infinite_measures.png"  alt="logo Accueil" /></a>
                     <nav class="navbar">
                         <ul>
                             <li><a href="/enregistrement" class="nav_button">Inscription</a></li>
@@ -49,7 +49,6 @@ if(isset($_SESSION['user_role'])){
         <?= $content ?>
 
         <footer class="footer">
-                <div class="footer_content">
                     <ul class="social_logos">
                         <li><a href="https://fr.linkedin.com" class="footer_link"><img src="public/images/linkedin.png" alt="logo linkedIn" class="social_logo"/></a></li> <!-- LinkedIn, facebook, Contact mail -->
                         <li><a href="https://www.facebook.com" class="footer_link"><img src="public/images/facebook.png" alt="logo Facebook" class="social_logo"/></a></li>
@@ -60,7 +59,6 @@ if(isset($_SESSION['user_role'])){
                         <li><a href="/cgu" class="footer_link">CGU</a></li>
                         <li><a href="/legalMention" class="footer_link">Mentions légales</a></li>
                     </ul>
-                <div>
         </footer>
     </body>
 </html>

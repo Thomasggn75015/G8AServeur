@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use PDO;
-use Database\DBConnection;
+use App\Database\DBConnection;
 
 abstract class Model{
 
@@ -34,17 +34,13 @@ abstract class Model{
             || strpos($sql, "DELETE") === 0)
         {
             $stmt = $this->db->getPDO()->$method($sql);
-            //Positionnement d'une option pour avoir des objets de la classe courante dans les résultats
-            //Exemple, si la fonction est appellée depuis la classe User, le tableau sera un tableau de "User"
-            $stmt->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
-            return $stmt->execute($param);
+            
+            $stmt->execute($param);
         }
 
-        // fetchAll renvoie plusieurs lignes alors que fetch renvoies une seule ligne
+        // fetchAll renvoie plusieurs lignes alors que fetch renvoie une seule ligne
         $fetch = is_null($single) ? 'fetchAll' : 'fetch' ;
         $stmt = $this->db->getPDO()->$method($sql);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
-
 
         if($method == "query"){
             //Retourne le(s) résultat(s) de la requête sans paramètres
@@ -60,14 +56,14 @@ abstract class Model{
     /**
      * Fonction permettant de retourner tous les tuples de la table du modèle courant
      */
-    public function findAll() : array{
+    public function findAll() {
         return $this->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
     }
 
     /**
      * Fonction permettant de retourner le tuples de la table du modèle courant ayant l'id spécifié
      */
-    public function findById(int $id): Model{
+    public function findById(int $id) {
         $find = $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true );
         return (gettype($find) == "boolean")? null : $find;
     }

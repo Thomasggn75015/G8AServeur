@@ -1,5 +1,8 @@
 <?php
-    class ResultatController extends Controller{
+
+    namespace App\Controllers;
+    
+    class ResultatController{
         function role_base_display($role, $pseudo){
             if($role == "COACH"){
                 $this->affichage_coach($pseudo);
@@ -15,13 +18,30 @@
         }
 
         function affichage_sportif($pseudo){
+            require("model/resultatModel.php");
+            $resultatModel = new ResultatModel();
+            $test = 'reaction_time';
+            $data_lumina = $resultatModel->get_data($test, $resultatModel->result_requete($test, $pseudo));
+
+            $test = 'rythm_memorization';
+            $data_rythme = $resultatModel->get_data($test, $resultatModel->result_requete($test, $pseudo));
+
+            $test = 'heart_rate';
+            $data_frecar = $resultatModel->get_data($test, $resultatModel->result_requete($test, $pseudo));
+
+            $test = 'temperature';
+            $data_temper = $resultatModel->get_data($test, $resultatModel->result_requete($test, $pseudo));
+
+            $test = 'sound_recognition';
+            $data_recson = $resultatModel->get_data($test, $resultatModel->result_requete($test, $pseudo));
             require("view/resultatViewSportif.php");
-            //echo "sportif";
         }
 
         function affichage_admin($pseudo){
             echo "admin";
         }
+
+
 
 
 

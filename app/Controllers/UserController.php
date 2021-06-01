@@ -1,4 +1,7 @@
 <?php
+
+    namespace App\Controllers;
+
     class InscriptionController extends Controller{
         function verif(){
             require('model\InscriptionModel.php');
@@ -48,6 +51,7 @@
                 }
                 else{
                     $modelInscription->setInformationInscription($conn, $_POST['prenom'], $_POST['nom'], $_POST['store_coach'], $_POST['pseudo'], md5($_POST['pswd']), $_POST['email'], $_POST['datedenaissance'], $_POST['role_user']);
+                    header('Location: /');
                 }
 
                 if($detection_erreur_enregistrement == 1){
