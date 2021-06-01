@@ -471,21 +471,23 @@ body{
 #contact{
   margin: 0px auto;
   width: 50%;
-  height: 50%;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   border: 1px solid black;
   text-align: center;
-  background-color: #5a40f1;
+  background-color: rgb(235, 235, 235);
 }
 .input_contact{
-  width: 20%;
+  width: 50%;
   height: 30%;
   font-size: 20px;
 }
 #message{
-  font-size: 12px
+  font-size: 20px;
+  height: 100px;
+  font-family: Arial;
 }
 /* --------------------------------------------------------------------------------------- */
 
@@ -500,7 +502,7 @@ body{
   margin:auto;
   margin-top:90px;
   margin-bottom:95px;
-  background-color: rgb(247, 247, 247);
+  background-color: #afcae8;
   padding : 30px;
   box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.452);
   border-radius: 10px;
@@ -560,3 +562,20 @@ body{
 }
 
 /* --------------------------------------------------------------------------------------- */
+
+/* ------------------------------Style de la page de profil------------------------------- */
+.form-recherche{
+  margin-left: 90%;
+}
+.profil_form-bloc{
+  width: 30%;
+  padding: 1%;
+  padding-left: 3%;
+  margin-left: 10%;
+  border: 1px solid black;
+  background-color: rgb(235, 235, 235);
+}
+
+h1{
+  text-align: center;
+}
