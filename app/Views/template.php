@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title> Infinite Measures </title>
         <link href="public/css/style.css" rel="stylesheet" /> 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     </head>
 
     <body>
