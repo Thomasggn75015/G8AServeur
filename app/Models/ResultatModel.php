@@ -3,13 +3,12 @@
     namespace App\Models;
 
     class ResultatModel extends Model{
-        protected $table = 'test';
+        protected $table = "Test";
 
         public function getData($test, $id_user){
             $user_id = $_SESSION['user_id'];
-            $sql_resultat = "SELECT ".$test.", DATE_FORMAT(date, '%d-%m %h:%i') FROM {$this->$table} JOIN adherents ON test.user_id = adherents.id WHERE id LIKE '".$id_user."'";
+            $sql_resultat = "SELECT $test, date FROM {$this->table} WHERE user_id=$id_user";
             $result = $this->query($sql_resultat);
-
 
 
             if($test == 'rythm_memorization'){
@@ -17,7 +16,7 @@
                 $data_false = '';
                 $true = 0;
                 $false = 0;
-                while ($row = mysqli_fetch_array($result)) {
+                foreach($result as $row) {
                     if($row[$test] == 'oui'){
                         $true++;
                     }else{
@@ -32,9 +31,9 @@
                 $data = '';
                 $date = '';
                 $length_data = 0;
-                while ($row = mysqli_fetch_array($result)) {
+                foreach($result as $row) {
                     $data = $data . '"'. $row[$test].'",';
-                    $date = $date . '"'. $row["DATE_FORMAT(date, '%d-%m %h:%i')"].'",';
+                    $date = $date . '"'. $row["date"].'",';
                     $length_data++;
                 }
             

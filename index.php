@@ -24,8 +24,7 @@ $router->post('/enregistrement', 'User#verif');
 $router->get('/mail', 'Mail#contact');
 $router->post('/mail', 'Mail#verif');
 
-$router->post('/resultats_graphiques', 'Resultat#affichage_sportif');
-$router->post('/resultats_graphiques', 'Resultat#resultats');
+$router->get('/data_user', 'Resultat#affichage_sportif');
 
 $router->get('/destroy', 'Search#destroySession');
 //On passe :slug et :id en paramètres, on appelle le contrôleur Post et sa méthode show, séparateur #

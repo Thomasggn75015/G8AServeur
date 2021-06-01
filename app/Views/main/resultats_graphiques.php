@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-        <head> 
-                <meta charset="utf-8" />
-                <title>Chart Test</title>
-                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-        </head>
-        <body>
-        <?php ob_start();?>	   
         <h1 style="text-align: center; font-size: 50px;">Résultats des tests</h1>
 	    <div class="container_all_graph">
             <div class=	"container_graph">
@@ -29,7 +20,7 @@
                 <h1 class = "titre_graph">Test reconnaissance sonore</h1>
                 <canvas id="chart5" style="width: 100%; height: 65vh; background: #afcae8; border: 1px solid #555652; margin-top: 10px;"></canvas>
             </div>
-
+		</div>
 			<script>
 				var ctx = document.getElementById("chart").getContext('2d');
     			var myChart = new Chart(ctx, {
@@ -168,11 +159,3 @@
 		        }
 		    });
 			</script>
-            
-            <?php $content = ob_get_clean(); ?>
-            <?php require('template.php'); ?>
-
-	    </div>
-	    
-	</body>
-</html>
