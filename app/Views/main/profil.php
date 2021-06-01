@@ -3,8 +3,7 @@
     if($_SESSION['user_role'] == 'coach' || $_SESSION['user_role'] == 'admin'){
         echo ('
         <form class="form-recherche" method="POST" action="/profil">
-            <label for="critereSelect">Selon quel critère souhaitez-vous rechercher un utilisateur ?</label>
-            <br/>
+            <label for="critereSelect"><h5>Selon quel critère souhaitez-vous rechercher un utilisateur ?</h5></label>
             <select name="critereSelect" id="critereSelect">
                 <option value="pseudo">Nom d\'utilisateur</option>
                 <option value="email">Mail</option>
@@ -13,31 +12,69 @@
                 <option value="lastname">Nom</option>
                 <option value="birthdate">Date de naissance</option>
             </select>
-            <br/>
-            <label class="label-recherche">Entrer les critères de recherche d\'utilisateur</label>
-            <br/>
+            <label class="label-recherche"><h5>Entrer les critères de recherche d\'utilisateur</h5></label>
             <input type="text" name="searchEntry" placeholder="ex. Jean"/>
             <br/>
             <button type="submit">Rechercher</button>
         </form>
         ');
     }
+    if(isset($params)){
+        echo ('
+                <table class="tableau_resultats-recherche>
+                <colgroup span="7" class="columns"></colgroup>
+                    <tr>
+                        <th>Role</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Nom du coach</th>
+                        <th>Nom d\'utilisateur</th>
+                        <th>Email</th>
+                        <th>Date de naissance</th>
+                    </tr>
+        ');
+            foreach($params as $row){
+                echo('
+                    <td> ' . $row["user_role"] . ' </td>
+                    <td> ' . $row["firstname"] . ' </td>
+                    <td> ' . $row["lastname"] . ' </td>
+                    <td> ' . $row["coachname"] . ' </td>
+                    <td> ' . $row["pseudo"] . ' </td>
+                    <td> ' . $row["email"] . ' </td>
+                    <td> ' . $row["birthdate"] . ' </td>
+                ');
+            }
+            echo('
+                        </tr>
+                    </tbody>
+                </table>
+            ');
+    }
     ?>
     <div class="profil_form-bloc">
             <h1>Modification du profil</h1>
-            <form class="profil_form-modif" method="post" action="/profil/modifProfil">
+            <?php 
+            if(isset($params)){
+                echo("
+                    <h4 class=message-systeme>" . $params[0] . "</h4>
+                ");
+            }
+            ?>
+            <form class="profil_form-modif" method="post" action="/profil">
                     <div class="profil_bloc-pseudonyme">
-                        <!--<h2><?php echo 'Pseudonyme actuel : ' . $infos_profil["pseudo"]?></h2>-->
-                        <label for="pseudo">Changer le pseudonyme</label>
+                        <h4 class="user-field"><?php echo 'Pseudonyme actuel : ' . $_SESSION["user_pseudo"]?></h4>
+                        <label for="pseudo">Changer le pseudonyme :</label>
                         <input type="text" id="pseudo" name="pseudo" placeholder="Nouveau pseudo"/>
                     </div>
-                    <label for="mdp">Changer le mot de passe</label>
+                    <br/>
+                    <label for="mdp">Changer le mot de passe :</label>
                     <input type="text" id="mdp" name="mdp" placeholder="Nouveau mot de passe"/>
                     <div class="profil_bloc-email">
-                        <!--<h2><?php echo 'Email actuel : ' . $infos_profil["email"]?></h2>-->
+                        <h4 class="user-field"><?php echo 'Email actuel : ' . $_SESSION["user_mail"]?></h4>
                         <label for="email">Changer l'email</label>
                         <input type="text" id="email" name="email" placeholder="Nouvel email"/>
                     </div>
+                    <br/>
                     <input type="submit" value="Valider les changements"/>
             </form>
     </div>

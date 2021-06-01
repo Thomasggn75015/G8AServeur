@@ -490,20 +490,20 @@ body{
 /* --------------------------------------------------------------------------------------- */
 
 /*-------------------------------------- Connexion --------------------------------------- */
+.page-connexion{
+  height:800px;
+}
+
 #container {
   font-family:'Open Sans', sans-serif;
   width: 450px;
-  margin:0 auto;
-  margin-top:15%;
+  margin:auto;
+  margin-top:90px;
+  margin-bottom:95px;
   background-color: rgb(247, 247, 247);
   padding : 30px;
   box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.452);
   border-radius: 10px;
-}
-
-body {
-  background: linear-gradient(#97bce6, #afcae8);
-  background-attachment: fixed;
 }
 
 .Connexion_titre_blocConnexion {

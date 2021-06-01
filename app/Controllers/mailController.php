@@ -1,4 +1,6 @@
 <?php
+
+    namespace App\Controllers;
     class MailController{
         function verif(){
             require('view/envoieMail.php');

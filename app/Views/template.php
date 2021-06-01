@@ -1,14 +1,3 @@
-<?php
-$userId = null;
-$userRole = null;
-if(isset($_SESSION['user_id'])){
-        $userId = $_SESSION['user_id'];
-}
-if(isset($_SESSION['user_role'])){
-    $userRole = $_SESSION['user_role'];
-}
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,6 +17,7 @@ if(isset($_SESSION['user_role'])){
                             <li><a href="/profil" class="nav_button">Profil</a></li>
                             <li><a href="/data_user" class="nav_button">Mes données</a></li>
                             <li><a href="/faq" class="nav_button">FAQ</a></li>
+                            <li><a href="/destroy" class="nav_button">Deconnexion</a></li>
                         </ul>
                     </nav>
                 <?php

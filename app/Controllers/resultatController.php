@@ -1,6 +1,8 @@
 <?php
 
     namespace App\Controllers;
+
+    use App\Models\ResultatModel;
     
     class ResultatController{
         function role_base_display($role, $pseudo){

@@ -12,22 +12,20 @@ class SearchController extends Controller{
     public $detection_erreur_enregistrement = 0;
     public $detail_erreur_enregistrement = null;
 
-    public function profil(){
-        return $this->view('main.profil');
+    public function profil(array $params = null){
+        return $this->view('main.profil', $params);
     }
 
     public function profilPost(){ //La variable $_POST est bonne mais la requête fonctionne pas
         if($this->isNotSportsman()){
             if($this->isAdmin()){
                 $searchRequest = (new User($this->getDB()))->findByCritere($_POST['critereSelect'], htmlspecialchars($_POST['searchEntry'])); //Pour les administrateurs qui font une recherche
-                //return $searchRequest; //Ça récupère rien 
             }
             else{
                 $searchRequest = (new User($this->getDB()))->findUserByCritere($_POST['critereSelect'], htmlspecialchars($_POST['searchEntry'])); //Pour les coachs qui cherchent leurs utilisateurs
-                //return $searchRequest; //Ça récupère rien 
             }
         }
-        return $this->profil();
+        return $this->profil($searchRequest);
     }
 
     public function validerModifProfil(){
@@ -44,13 +42,13 @@ class SearchController extends Controller{
                 }
             }
 
-            if(isset($_POST['mdp']) && !preg_match("#^[a-zA-Z0-9]+$#", htmlspecialchars($_POST['mdp']))){
+            else if(isset($_POST['mdp']) && !preg_match("#^[a-zA-Z0-9]+$#", htmlspecialchars($_POST['mdp']))){
                 $this->modifMdp = htmlspecialchars($_POST['mdp']);
                     $this->detection_erreur_enregistrement = 1;
                     $this->detail_erreur_enregistrement = "Le format du mot de passe n'est pas valable";
             }
 
-            if(isset($_POST['email'])){//on vérifie que cet email n'est pas déjà utilisé par un autre membre
+            else if(isset($_POST['email'])){//on vérifie que cet email n'est pas déjà utilisé par un autre membre
                 $this->modifMail = htmlspecialchars($_POST['email']);
                 if((new User($this->getDB()))->findUserByEntry('email', $this->modifMail) != null){
                 $this->detection_erreur_enregistrement = 1;
@@ -59,18 +57,17 @@ class SearchController extends Controller{
             }
         
             if($this->detection_erreur_enregistrement == 1){
-                echo "<h4 class = 'erreur_enregistrement'>$this->detail_erreur_enregistrement</h4>";
-                return $this->profil();
+                return $this->profil($this->detail_erreur_enregistrement);
             }
 
             else{
-                $modifProfil = array("pseudo" => $this->modifPseudo, "mdp" => $this->modifMdp, "mail" => $this->modifMail);
+                $modifProfil = array("pseudo" => $this->modifPseudo, "mdp" => $this->modifMdp, "mail" => $this->modifMail, "id" => $_SESSION["user_id"]);
                 (new User($this->getDB()))->postModifProfil($modifProfil);
-                return $this->profil();
+                $succes = array("Informations modifiées avec succès");
+                return $this->profil($succes);
             }
         }
         else{
-            echo "Vous n'avez entré aucun champ à modifier";
             return $this->profil();
         }
     }

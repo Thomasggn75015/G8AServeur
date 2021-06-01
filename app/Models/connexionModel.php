@@ -1,21 +1,19 @@
 <?php
-    class ConnexionModel extends Model
-    {
+    namespace App\Models;
+    class ConnexionModel extends Model{
         protected $table = "Adherents";
 
-        function connect($user, $pswd)
+        function connectCheck($user, $pswd)
         {
-            $verifPswd = query("SELECT mdp FROM {$this->table} WHERE lastname= ?", [$user]);
-
-            if(md5($pswd) == $verifPswd )
+            $verifPswd = $this->query("SELECT mdp, id, pseudo, user_role, email FROM {$this->table} WHERE pseudo= ?", [$user]);
+            if(/*md5(*/$pswd/*)*/ == $verifPswd[0]["mdp"])
             {
-                header('Location: /profil')
+                return $verifPswd;
             }
 
             else
             {
-                echo("Erreur d'authentification !");
-                header('Location: /connexion');
+                return false;
             }
             
         }

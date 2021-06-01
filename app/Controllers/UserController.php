@@ -3,6 +3,10 @@
     namespace App\Controllers;
 
     class InscriptionController extends Controller{
+        function enregistrement(){
+            return $this->view('main.enregistrement');
+        }
+
         function verif(){
             require('model\InscriptionModel.php');
             require('view\inscriptionView.php');

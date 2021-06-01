@@ -12,14 +12,16 @@ $router->get('/cgu', 'Main#cgu');
 
 
 $router->get('/profil', 'Search#profil');
-$router->post('/profil', 'Search#profilPost');
-$router->post('/profil/modifProfil', 'Search#validerModifProfil');
+//$router->post('/profil', 'Search#profilPost');
+$router->post('/profil', 'Search#validerModifProfil');
 
-$router->get('/connexion', 'User#connect');
+$router->get('/connexion', 'Connexion#connect');
+$router->post('/connexion', 'Connexion#verifConnect');
 
 $router->get('/enregistrement', 'User#enregistrement');
 $router->post('/enregistrement', 'Enregistrement#enregistrementPost');
 
+$router->get('/destroy', 'Search#destroySession');
 //On passe :slug et :id en paramètres, on appelle le contrôleur Post et sa méthode show, séparateur #
 $router->get('/posts/:slug-:id', "Post#show")->with('id', '[0-9]+')->with('slug', '[a-z\-0-9]+');
 

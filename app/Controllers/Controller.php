@@ -36,9 +36,16 @@ abstract class Controller{
         return $this->db;
     }
 
-    public function setCurrentSession($user_id, $user_role){
-        $_SESSION['user_id']   = $user_id;
+    public function setCurrentSession($user_id, $user_pseudo, $user_role, $user_mail){
+        $_SESSION['user_id'] = $user_id;
+        $_SESSION['user_pseudo'] = $user_pseudo;
         $_SESSION['user_role'] = $user_role;
+        $_SESSION['user_mail'] = $user_mail;
+
+        setcookie('user_id', $user_id, time() + 365*24*3600, null, null, false, true);
+        setcookie('user_pseudo', $user_pseudo, time() + 365*24*3600, null, null, false, true);
+        setcookie('user_role', $user_role, time() + 365*24*3600, null, null, false, true);
+        setcookie('user_mail', $user_mail, time() + 365*24*3600, null, null, false, true);
     }
 
     public function isLoggedIn(){
@@ -51,7 +58,7 @@ abstract class Controller{
      */
     protected function isAdmin(){
         if(isset($_SESSION['user_id'])){
-            if($user->user_role == "admin"){
+            if($_SESSION["user_role"] == "admin"){
                 return true;
             }
             else{
@@ -62,7 +69,7 @@ abstract class Controller{
 
     protected function isNotSportsman(){
         if(isset($_SESSION['user_id'])){
-            if($user->user_role == "admin" || $user->user_role == "coach" ){
+            if($_SESSION["user_role"]== "admin" || $_SESSION["user_role"] == "coach" ){
                 return true;
             }
             else{ 
@@ -73,8 +80,10 @@ abstract class Controller{
 
     public function destroySession(){
         session_destroy();
-        setcookie("athl_user_id", "", time()-3600);
-        setcookie("athl_user_mode", "", time()-3600);
+        setcookie("user_id", "", time()-3600);
+        setcookie("user_pseudo","", time()-3600);
+        setcookie("user_role", "", time()-3600);
+        setcookie("user_mail", "", time()-3600);
         return header('Location: /');
     }
 

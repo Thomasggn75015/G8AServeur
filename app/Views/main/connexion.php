@@ -1,18 +1,20 @@
-<div id="container">
-    <form action="/connexion" method="POST">
+<div id="page-connexion">
+    <div id="container">
+        <form action="/connexion" method="POST">
 
-        <h1 class="Connexion_titre_blocConnexion">Connexion</h1>
+            <h1 class="Connexion_titre_blocConnexion">Connexion</h1>
 
-        <label >Login<br></label>
-        <input type="text" placeholder="Login" name="username" class="Connexion_input_login"><br>
+            <label >Login<br></label>
+            <input type="text" placeholder="Login" name="username" class="Connexion_input_login"><br>
 
-        <label>Password<br></label>
-        <input type="password" placeholder="Password" name="password" class="Connexion_input_password"><br>
+            <label>Password<br></label>
+            <input type="password" placeholder="Password" name="password" class="Connexion_input_password"><br>
 
-        <input type="submit" name="submitConnexion" value="Continuer" class="Connexion_bouton_continuer">
-        <input type="submit" name="submitInscription" value="Inscription" class="Connexion_bouton_inscription">
-    </form>
+            <input type="submit" name="submitConnexion" value="Continuer" class="Connexion_bouton_continuer">
+            <input type="submit" name="submitInscription" value="Inscription" class="Connexion_bouton_inscription">
+        </form>
 
+    </div>
 </div>
 
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com">

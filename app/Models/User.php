@@ -10,7 +10,7 @@ class User extends Model{
         $searchEntry = "$searchEntry%";
         return $this->query("SELECT id, user_role, firstname, lastname, coachname, pseudo, email, birthdate FROM {$this->table} WHERE $critereSelect LIKE ?", [$searchEntry]);
     }
-
+    
     public function findUserByCritere($critereSelect, $searchEntry){
         $user_id = $_SESSION['user_id'];
         $coachname = $this->query("Select firstname FROM {$this->table} WHERE user_id = $user_id");
@@ -23,7 +23,7 @@ class User extends Model{
     }
 
     public function postModifProfil($modifProfil){
-        if($modifProfil["pseudo"] == null){
+        /*if($modifProfil["pseudo"] == null){
             unset($modifProfil["pseudo"]);
         }
         if($modifProfil["mdp"] == null){
@@ -31,10 +31,16 @@ class User extends Model{
         }
         if($modifProfil["mail"] == null){
             unset($modifProfil["mail"]);
-        }
-
-        var_dump($modifProfil);
-        $modifKeys = array_keys($modifProfil);
-        $modifValues = array_values($modifProfil);
+        }*/
+        //var_dump($modifProfil);
+        $pseudo = $modifProfil["pseudo"];
+        $mdp = $modifProfil["mdp"];
+        $mail = $modifProfil["mail"];
+        //var_dump($pseudo);
+        //var_dump($mdp);
+        //var_dump($mail);
+        /*if($modifProfil["pseudo"] != null && $modifProfil["mdp"] != null && $modifProfil["mail"] != null){
+            $this->query("UPDATE {$this->table} SET pseudo='?', mdp='?', email='?' WHERE id=?", [$modifProfil]);
+        }*/
     }
 }
