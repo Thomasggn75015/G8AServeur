@@ -564,13 +564,22 @@ body{
 /* --------------------------------------------------------------------------------------- */
 
 /* ------------------------------Style de la page de profil------------------------------- */
-.form-recherche{
-  margin-left: 90%;
+.bloc-profil{
+  display: flex;
+  justify-content: space-between;
+  height: 800px;
+}
+#recherche_utilisateur{
+  margin-right: 10%;
+  margin-top: 8%;
+  text-align: center;
 }
 .profil_form-bloc{
   width: 30%;
+  height: 40%;
   padding: 1%;
   padding-left: 3%;
+  margin-top: 10%;
   margin-left: 10%;
   border: 1px solid black;
   background-color: rgb(235, 235, 235);
