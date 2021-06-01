@@ -12,25 +12,25 @@
 
 <body>
 <div id="corps_FAQ_CGU">
-	<a id="haut"> </a>
+	<a id="remonterEnHaut"> </a>
 
 <div id="cgu_corps_wrapper">
 
 	<div class="cgu_menu">
 		<ul>
-            <li id="cgu_menu-titreArticle"><a href="#article1">Article 1. Objet</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article2">Article 2. Mentions légales</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article3">Article 3. texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article3.1">3.1 texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article3.2">3.2 texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article3.3">3.3 texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article4">Article 4. texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article4.1">4.1 texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article4.2">4.2 texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article5">Article 5. texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article6">Article 6. texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article6.1">6.1 texte</a></li>
-			<li id="cgu_menu-titreArticle"><a href="#article6.2">6.2 texte</a></li>
+            <li class="cgu_menu-titreArticle"><a href="#article1">Article 1. Objet</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article2">Article 2. Mentions légales</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article3">Article 3. texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article3.1">3.1 texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article3.2">3.2 texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article3.3">3.3 texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article4">Article 4. texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article4.1">4.1 texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article4.2">4.2 texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article5">Article 5. texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article6">Article 6. texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article6.1">6.1 texte</a></li>
+			<li class="cgu_menu-titreArticle"><a href="#article6.2">6.2 texte</a></li>
         </ul>
 	</div>	
 
