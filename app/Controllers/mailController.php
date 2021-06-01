@@ -1,6 +1,13 @@
 <?php
-    class MailController{
+
+    namespace App\Controllers;
+
+    class MailController extends Controller{
         function verif(){
+            public function contact(){
+                return $this->view('main.mail');
+            }
+
             require('view/envoieMail.php');
 
             if(isset($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['sujet'], $_POST['message'])){
@@ -49,6 +56,4 @@
             }
         }
     }
-    $mail = new MailController();
-    $mail->verif();
 ?>

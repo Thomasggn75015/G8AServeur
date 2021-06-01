@@ -20,6 +20,9 @@ $router->get('/connexion', 'User#connect');
 $router->get('/enregistrement', 'User#enregistrement');
 $router->post('/enregistrement', 'User#verif');
 
+$router->get('/mail', 'Mail#contact');
+$router->post('/mail', 'Mail#verif');
+
 //On passe :slug et :id en paramètres, on appelle le contrôleur Post et sa méthode show, séparateur #
 $router->get('/posts/:slug-:id', "Post#show")->with('id', '[0-9]+')->with('slug', '[a-z\-0-9]+');
 
