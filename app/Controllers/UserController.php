@@ -56,7 +56,7 @@
                 }
 
                 if($detection_erreur_enregistrement == 1){
-                    echo "<h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4>";
+                    echo "<div class = 'enregistrement_formulaire'><h4 class = 'erreur_enregistrement'>$detail_erreur_enregistrement</h4></div>";
                 }
             }
         }
