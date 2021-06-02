@@ -1,4 +1,7 @@
 <div id="page-connexion">
+<div class="erreur-connexion">
+        <?php if(isset($_GET["error"])){ echo $_GET["error"]; }?>
+</div>
     <div id="container">
         <form action="/connexion" method="POST">
 

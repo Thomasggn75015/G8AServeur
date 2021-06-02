@@ -27,6 +27,7 @@ class ConnexionController extends Controller{
                     echo "<h4 class = 'detail_erreur'>$detail_erreur</h4>";
                 }
             } elseif(isset($_POST['username'], $_POST['password'])){
+                var_dump($_POST['username']);
                 $userVariables = (new ConnexionModel($this->getDB()))->connectCheck($_POST['username'], $_POST['password']);
             
                 if($userVariables != false){

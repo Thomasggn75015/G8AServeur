@@ -16,4 +16,12 @@ class MainController extends Controller{
         return $this->view('main.cgu');
     }
 
+    public function mention(){
+        return $this->view('main.mention');
+    }
+
+    public function faq(){
+        return $this->view('main.faq');
+    }
+
 }

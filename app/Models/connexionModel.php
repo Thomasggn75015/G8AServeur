@@ -13,7 +13,8 @@
 
             else
             {
-                return false;
+                $error="Nom d'utilisateur ou mot de passe incorrect";
+                header("Location: /connexion?error=".$error);
             }
             
         }

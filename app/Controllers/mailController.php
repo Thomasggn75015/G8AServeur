@@ -22,7 +22,7 @@
                     $detail_erreur_enregistrement = "Le nom n'est pas valide / Le nom doit être en majuscule";
                 }
                 else{
-                    $to = 'max.gacoin@sfr.fr';
+                    $to = 'thomas.gagnier0@gmail.com';
                     $from = $_POST['email'];
                     $sujet = $_POST['sujet'];
                     $name_from =  $_POST['nom'];
@@ -43,8 +43,9 @@
                         'X-Mailer: PHP/' . phpversion();
  
                     if(mail($to, $sujet, $message_from, $headers)){
-                        echo"<h4 class = 'reponse_auto'>Merci pour votre message, un mail de confirmation de reception vous sera délivré</4>";
+                        Header("Location: /");
                     }else{
+                        Header("Location: /mail");
                         echo"<h4 class = 'reponse_auto'>Erreur dans l'envoie de votre message, veuillez réessayer</h4>";
                     }
                     mail($from, $sujet_auto, $message_auto);

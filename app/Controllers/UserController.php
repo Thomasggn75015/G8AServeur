@@ -3,11 +3,11 @@
     namespace App\Controllers;
     use App\Models\User;
     class UserController extends Controller{
-        function enregistrement(){
+        public function enregistrement(){
             return $this->view('main.enregistrement');
         }
 
-        function verif(){
+        public function verif(){
             if(isset($_POST['prenom'], $_POST['nom'], $_POST['store_coach'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'], $_POST['datedenaissance'], $_POST['role_user'])){
                 $detection_erreur_enregistrement = 0;
                 $detail_erreur_enregistrement = "";
@@ -31,7 +31,7 @@
                     $detail_erreur_enregistrement = "Votre nom d'utilisateur doit être en caractère alphanumérique";
                     $detection_erreur_enregistrement = 1;
                 }
-                elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Adherents WHERE pseudo='".$_POST['pseudo']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                elseif((new User($this->getDB()))->findUserByEntry('pseudo', $_POST['pseudo']) !== null){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
                     $detection_erreur_enregistrement = 1;
                     $detail_erreur_enregistrement = "Ce pseudo est déjà utilisé";
                 }
@@ -46,13 +46,14 @@
                     $detail_erreur_enregistrement = "La date de naissance renseignée n'est pas valable";
                 }
                 //Condition sur l'e-mail
-                elseif(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM Adherents WHERE email='".$_POST['email']."'"))==TRUE){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
+                elseif((new User($this->getDB()))->findUserByEntry('email', $_POST['email']) !== null){//on vérifie que ce pseudo n'est pas déjà utilisé par un autre membre
                     $detection_erreur_enregistrement = 1;
                     $detail_erreur_enregistrement = "Cette adresse e-mail est déjà utilisée";
                 }
                 else{
-                    $signinInfo = array($_POST['prenom'], $_POST['nom'], $_POST['store_coach'], $_POST['pseudo'], md5($_POST['pswd']), $_POST['email'], $_POST['datedenaissance'], $_POST['role_user']);
+                    $signinInfo = array($_POST['prenom'], $_POST['nom'], $_POST['store_coach'], $_POST['pseudo'], $_POST['pswd'], $_POST['email'], $_POST['datedenaissance'], $_POST['role_user']);
                     (new User($this->getDB()))->setInformationInscription($signinInfo);
+                    header('Location: /connexion');
                 }
 
                 if($detection_erreur_enregistrement == 1){

@@ -1,14 +1,19 @@
-<?php 
-    if(isset($params) && count($params) < 1){
+<?php
+    if(isset($_GET["error"])){
         echo("
-            <h4 class=message-systeme>" . $params["systeme"] . "</h4>
+            <h4 class=message-systeme>" . $_GET["error"] . "</h4>
+        ");
+    }
+    if(isset($_GET['succes'])){
+        echo("
+            <h4 class=message-systeme>" . $_GET["succes"] . "</h4>
         ");
     }
 ?>
 <div class="bloc-profil">
     <div class="profil_form-bloc">
             <h1>Modification du profil</h1>
-            <form class="profil_form-modif" method="PUT" action="/profil">
+            <form class="profil_form-modif" method="POST" action="/profil/modif">
                     <div class="profil_bloc-pseudonyme">
                         <h4 class="user-field"><?php echo 'Pseudonyme actuel : ' . $_SESSION["user_pseudo"]?></h4>
                         <label for="pseudo">Changer le pseudonyme :</label>
@@ -50,10 +55,14 @@
             </form>
             ');
         }
+        ?>
+    </div>
+    <div class="tableau-recherche">
+        <?php
         if(isset($params)){
             echo ('
                     <table class="tableau_resultats-recherche">
-                    <colgroup span="7" class="columns"></colgroup>
+                    <colgroup span="8" class="columns"></colgroup>
                         <tr>
                             <th>Role</th>
                             <th>Prénom</th>
@@ -62,6 +71,7 @@
                             <th>Nom d\'utilisateur</th>
                             <th>Email</th>
                             <th>Date de naissance</th>
+                            <th></th>
                         </tr>
             ');
                 foreach($params as $row){
@@ -73,10 +83,37 @@
                         <td> ' . $row["pseudo"] . ' </td>
                         <td> ' . $row["email"] . ' </td>
                         <td> ' . $row["birthdate"] . ' </td>
+                        <td class="delete-bouton">
+                        ');
+                        if($_SESSION["user_role"] == 'admin'){
+                        echo '
+                        <form action="/deleteUser" method="POST">
+                        <input type="submit" name="' . $row['pseudo'] . '" value="Supprimer"></input>
+                        </form>
+                        ';
+                        }
+                    echo('</td>
+                        
+                        </tr>
                     ');
                 }
                 echo('
-                            </tr>
+                        <form action="/addUser" method="POST">
+                            <td>
+                                <select name="user_role">
+                                    <option value="sportif">Sportif</option>
+                                    <option value="coach">Coach</option>
+                                    <option value="admin">Administrateur</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="firstname" placeholder="prenom"></input></td>
+                            <td><input type="text" name="lastname" placeholder="nom"></input></td>
+                            <td><input type="text" name="coachname" placeholder="nom du coach"></input></td>
+                            <td><input type="text" name="pseudo" placeholder="pseudo"></input></td>
+                            <td><input type="text" name="email" placeholder="adresse mail"></input></td>
+                            <td><input type="text" name="birthdate" placeholder="date de naissance"></input></td>
+                            <td><input type="submit" name="ajouter" value="Ajouter"></input></td>
+                        </form>
                         </tbody>
                     </table>
                 ');

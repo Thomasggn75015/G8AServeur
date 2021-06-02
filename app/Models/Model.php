@@ -41,6 +41,20 @@ abstract class Model{
         // fetchAll renvoie plusieurs lignes alors que fetch renvoie une seule ligne
         $fetch = is_null($single) ? 'fetchAll' : 'fetch' ;
         $stmt = $this->db->getPDO()->$method($sql);
+        if(strpos($sql, "UPDATE") === 0){
+            $stmt->execute($param);
+            return null;
+        }
+
+        if(strpos($sql, "DELETE") === 0){
+            $stmt->execute($param);
+            return null;
+        }
+
+        if(strpos($sql, "INSERT INTO") === 0){
+            $stmt->execute($param);
+            return null;
+        }
 
         if($method == "query"){
             //Retourne le(s) résultat(s) de la requête sans paramètres
@@ -52,12 +66,6 @@ abstract class Model{
         }
     
     }
-
-   /* public function update(string $param = null){
-        $pdo = $this->db->getPDO();
-        $pdo->prepare("UPDATE Adherents SET pseudo='?' WHERE id=2);
-        return $result->execute($param);
-    }*/
     
     /**
      * Fonction permettant de retourner tous les tuples de la table du modèle courant

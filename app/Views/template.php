@@ -43,12 +43,12 @@
                     <ul class="social_logos">
                         <li><a href="https://fr.linkedin.com" class="footer_link"><img src="public/images/linkedin.png" alt="logo linkedIn" class="social_logo"/></a></li> <!-- LinkedIn, facebook, Contact mail -->
                         <li><a href="https://www.facebook.com" class="footer_link"><img src="public/images/facebook.png" alt="logo Facebook" class="social_logo"/></a></li>
-                        <li><a href="/sendMail" class="footer_link"><img src="public/images/mail.png" alt="logo Mail" class="social_logo"/></a></li>
+                        <li><a href="/mail" class="footer_link"><img src="public/images/mail.png" alt="logo Mail" class="social_logo"/></a></li>
                     </ul>
                     <h1 class="footer_contact-message"> Contactez nous </h1>
                     <ul class="footer_nav">
                         <li><a href="/cgu" class="footer_link">CGU</a></li>
-                        <li><a href="/legalMention" class="footer_link">Mentions légales</a></li>
+                        <li><a href="/mention" class="footer_link">Mentions légales</a></li>
                     </ul>
         </footer>
     </body>

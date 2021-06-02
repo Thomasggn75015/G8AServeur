@@ -1,6 +1,6 @@
 <div class='enregistrement_formulaire'>
     <h1 class = "enregistrement"><B class = 'titreEnGras'>Créer un compte</h1>
-    <form class = 'form' NAME = "form" ACTION = "indexInscription.php" METHOD = "POST">
+    <form class = 'form' NAME = "form" ACTION = "/enregistrement" METHOD = "POST">
         <section id='section_prenom'>
             <label for = 'prenom'>Votre prénom</label></br>
             <INPUT class = "input_enregistrement" TYPE = 'TEXT', id = 'prenom', name = 'prenom' placeholder = 'Prénom' required minlength="2"></br>               <!--PRENOM-->
@@ -40,7 +40,7 @@
 
         <section id='section_pswd'>
             <label for = 'pswd'>Votre mot de passe</label></br>
-            <INPUT class = "input_enregistrement" TYPE = 'TEXT', id = 'pswd', name = 'pswd' placeholder = "Au moins 6 caractères" required minlength="8" maxlength="50"></br>   <!--MOT DE PASSE-->
+            <INPUT class = "input_enregistrement" TYPE = 'password', id = 'pswd', name = 'pswd' placeholder = "Au moins 6 caractères" required minlength="8" maxlength="50"></br>   <!--MOT DE PASSE-->
             <p class = 'interligneValider_enregistrement'></p>
         </section>
 
@@ -59,3 +59,4 @@
             <p>Vous possédez déjà un compte ? <a href = "connexion.php">Identifiez-vous</a></p>
     </form>
 </div>
+<script src="public/js/script_enregistrement.js"></script>
